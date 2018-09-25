@@ -21,13 +21,8 @@
                         <label for="loginWachtwoord">Wachtwoord</label>
                         <input type="password" class="form-control" id="loginWachtwoord" placeholder="Wachtwoord">
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="loginCheck">
-                        <label class="form-check-label" for="loginCheck">Aangemeld blijven</label>
-                    </div>
                     <div class="form-group">
                         <small id="loginHelp" class="form-text text-muted"><a href="">Wachtwoord vergeten</a></small>
-                        <small id="loginRegistreer" class="form-text text-muted"><a href="">Nog geen account? Registreer</a></small>
                     </div>
 
                 </div>

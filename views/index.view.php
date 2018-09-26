@@ -10,8 +10,8 @@
     <body>
     <?php
     require 'components/navbar/navbar.component.php';
-    require 'components/jumbotron/jumbotron.component.php';
     require 'views/components/carousel/caroesel.component.php';
+    require 'components/jumbotron/jumbotron.component.php';
     ?>
 
 

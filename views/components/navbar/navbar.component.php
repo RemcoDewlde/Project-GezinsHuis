@@ -15,6 +15,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">evenementen</a>
+            </li>
             <!-- Knop om de modal te openen -->
             <li class="nav-item">
                 <a class="nav-link" id="navLogin" data-toggle="modal" href="#loginModal">Aanmelden</a>

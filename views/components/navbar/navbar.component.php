@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="views/components/navbar/navbar.style.css">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <i class="fab fa-pied-piper-alt"></i>
+    <a class="navbar-brand" href="#">
+        <img src="assets/Logo-gezinshuis/Breed/GezinshuisRegterink_logo_breed.png" class="logo">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

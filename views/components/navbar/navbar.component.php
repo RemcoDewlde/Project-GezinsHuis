@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="views/components/navbar/navbar.style.css">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
         <img src="assets/Logo-gezinshuis/Breed/GezinshuisRegterink_logo_breed.png" class="logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,16 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/contact">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
+                <a class="nav-link" href="/about">About us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">evenementen</a>
+                <a class="nav-link" href="/evenementen">evenementen</a>
             </li>
             <!-- Knop om de modal te openen -->
             <li class="nav-item">

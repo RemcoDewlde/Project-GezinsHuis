@@ -10,6 +10,11 @@ switch ($request_uri[0]){
         require 'views/about.view.php';
         break;
 
+    case '/evenementen':
+        require 'views/evenementen.view.php';
+        break;
+
+
     default:
         header('HTTP/1.1 404 NOT FOUND');
         require 'views/error.view.php';

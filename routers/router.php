@@ -11,7 +11,7 @@ switch ($request_uri[0]){
         break;
 
     case '/evenementen':
-        require 'views/evenementen.view.php';
+        require 'controller/evenementen.controller.php';
         break;
 
     case '/dashboard/':
@@ -27,7 +27,7 @@ switch ($request_uri[0]){
         break;
 
     case '/dashboard/gebruikers':
-        require 'views/dashboard/dashboardgebruikers.view.php';
+        require 'controller/dashboardgebruikers.controller.php';
         break;
 
     default:

@@ -8,8 +8,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/contact">Contact</a>
@@ -18,7 +18,7 @@
                 <a class="nav-link" href="/about">About us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/evenementen">evenementen</a>
+                <a class="nav-link" href="/evenementen">Evenement</a>
             </li>
             <!-- Knop om de modal te openen -->
             <li class="nav-item">

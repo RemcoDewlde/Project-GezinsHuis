@@ -9,7 +9,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>   <!-- Knop om modal te sluiten(X) -->
             </div>
 
-            <form action="/action_page.php" target="_self">
+            <form action="/action_page.php" method="post" target="_self">
                 <!-- Modal body -->
                 <div class="modal-body">
 

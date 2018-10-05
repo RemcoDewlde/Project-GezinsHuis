@@ -14,6 +14,17 @@ switch ($request_uri[0]){
         require 'views/evenementen.view.php';
         break;
 
+    case '/dashboard':
+        require 'views/dashboard/dashboard.view.php';
+        break;
+
+    case '/dashboardevenement':
+        require 'views/dashboard/dashboardevenement.view.php';
+        break;
+
+    case '/dashboardgebruikers':
+        require 'views/dashboard/dashboardgebruikers.view.php';
+        break;
 
     default:
         header('HTTP/1.1 404 NOT FOUND');

@@ -2,8 +2,6 @@
 
     <div class="row">
 
-
-
         <div class="col-sm-4 py-2">
             <div class="card h-100">
 
@@ -22,13 +20,10 @@
                         Maak aan
                     </button>
 
-
                 </div>
 
             </div>
         </div>
-
-
 
         <!--Met admin knoppen-->
         <div class="col-sm-4 py-2">
@@ -61,13 +56,9 @@
 
             </div>
         </div>
-<?php
-require 'views/components/dashboard/dashboardwarningmodal/dashboardwarningmodalgebruiker.component.php';
-?>
-
-
-
-
+    <?php
+     require 'views/components/dashboard/dashboardwarningmodal/dashboardwarningmodalgebruiker.component.php';
+    ?>
 
     </div>
 </div>

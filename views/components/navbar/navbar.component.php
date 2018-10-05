@@ -29,6 +29,7 @@
 </nav>
 
 <?php
+//    voegt de loginmodal toe
     require 'views/components/loginmodel/loginmodal.component.php';
 ?>
 

@@ -125,7 +125,11 @@
 
 .logo{
     height: 36px;
-
+}
+.customfix{
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
 }
 
 

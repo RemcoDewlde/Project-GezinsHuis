@@ -1,9 +1,6 @@
 <div class="container">
 
     <div class="row">
-
-
-
         <div class="col-sm-4 py-2">
             <div class="card h-100">
 
@@ -21,7 +18,6 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#evenementModal">
                         Maak aan
                     </button>
-
 
                 </div>
 
@@ -56,8 +52,6 @@
 
                     </a>
                 </div>
-
-
             </div>
         </div>
 
@@ -65,9 +59,6 @@
         <?php
         require 'views/components/dashboard/dashboardwarningmodal/dashboardwarningmodalevenement.component.php';
         ?>
-
-
-
 
 
     </div>

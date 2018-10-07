@@ -13,5 +13,5 @@ gebruik voor alle hulp die nodig is bij git deze [link](
 
 ### Project Pagina
 [klik hier](
-  remcodewlde.github.io/Project-GezinsHuis
+  http://remcodewlde.github.io/Project-GezinsHuis
 )

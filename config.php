@@ -7,7 +7,7 @@
  */
 return [
     'database' => [
-        'name' => 'boardgameapp',
+        'name' => 'gezinshuis',
         'username' => 'root',
         'password' => 'toor',
         'connection' => 'mysql:host=localhost:3306',

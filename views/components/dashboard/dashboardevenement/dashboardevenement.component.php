@@ -6,7 +6,7 @@
 
                 <div class="card-block text-center">
                     <div class="card-header">
-                        <a href="" data-target="#evenementModal" data-toggle="modal"><h2><i class="fa fa-calendar-plus-o   e-o fa-5x"></i></h2></a>
+                        <a href="/dashboard/evenementform"><h2><i class="fa fa-calendar-plus-o   e-o fa-5x"></i></h2></a>
                     </div>
                 </div>
 
@@ -15,9 +15,7 @@
                 </div>
                 <div class="card-footer text-right">
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#evenementModal">
-                        Maak aan
-                    </button>
+                    <a href="/dashboard/evenementform" class="btn btn-primary" role="button">Maak aan</a>
 
                 </div>
 
@@ -63,5 +61,3 @@
 
     </div>
 </div>
-
-

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="views/components/navbar/navbar.style.css">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">
-        <img src="assets/Logo-gezinshuis/Breed/GezinshuisRegterink_logo_breed.png" class="logo">
+        <img src="assets/Logo-gezinshuis/Breed/GezinshuisRegterink_Logo.png" class="logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="/evenementen">Evenement</a>
             </li>
-            <!-- Knop om de modal te openen -->
+
+        </ul>
+        <!-- Knop om de modal te openen -->
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" id="navLogin" data-toggle="modal" href="#loginModal">Aanmelden</a>
             </li>

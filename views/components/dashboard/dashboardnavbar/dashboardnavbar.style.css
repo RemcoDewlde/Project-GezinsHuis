@@ -5,7 +5,7 @@
 #sidebar .list-group {
     min-width: 400px;
     background-color: #333;
-    min-height: 100vh;
+    min-height: calc(100vh - 62px);
 }
 #sidebar i {
     margin-right: 6px;
@@ -131,5 +131,7 @@
     -moz-border-radius: 0px;
     border-radius: 0px;
 }
+
+
 
 

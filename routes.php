@@ -10,7 +10,8 @@ $router->get('users', 'controllers/users.php');
 $router->get('dashboard', 'controller/dashboard.controller.php');
 $router->get('dashboard/gebruikers', 'controller/dashboardgebruikers.controller.php');
 $router->get('dashboard/evenement', 'controller/dashboardevenementen.controller.php');
-
+$router->get('dashboard/evenementform', 'controller/dashboardevenementform.controller.php');
+$router->get('dashboard/gebruikersform', 'controller/dashboardgebruikersform.controller.php');
 
 /**
  * POST routes

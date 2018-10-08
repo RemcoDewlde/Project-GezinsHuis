@@ -25,6 +25,7 @@
             </div>
         </div>
 
+
         <!--Met admin knoppen-->
         <div class="col-sm-4 py-2">
             <div class="card h-100">

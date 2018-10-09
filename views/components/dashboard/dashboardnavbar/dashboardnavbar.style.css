@@ -5,7 +5,7 @@
 #sidebar .list-group {
     min-width: 400px;
     background-color: #333;
-    min-height: calc(100vh - 62px);
+    min-height: 100vh;
 }
 #sidebar i {
     margin-right: 6px;
@@ -74,6 +74,9 @@
         transform: translateX(-45px);
         position: fixed;
     }
+.hidden-xs{
+    display:none;
+}
 
     #sidebar.show {
         transform: translateX(0);
@@ -132,6 +135,15 @@
     border-radius: 0px;
 }
 
+#mobileimg{
+    margin-left: -4px;
+}
 
+
+@media (min-width:768px){
+    #mobileimg{
+        display:none;
+    }
+}
 
 

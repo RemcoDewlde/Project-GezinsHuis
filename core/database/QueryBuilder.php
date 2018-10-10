@@ -34,9 +34,8 @@ class QueryBuilder
     public function comparator($email, $password){
         $statement = $this->pdo->prepare("SELECT * FROM users WHERE email == {$email} AND password == {$password}");
         $statement->execute();
-
-
-
+        // voor debug
+        return $statement;
     }
 
 }

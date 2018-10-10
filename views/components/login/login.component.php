@@ -4,7 +4,7 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
 <!-- Default form login -->
-<form class="text-center border border-light p-5" action="core/database/login.php" method="post">
+<form class="text-center border border-light p-5" action="core/login.php" method="post">
 
     <p class="h4 mb-4">Sign in</p>
 

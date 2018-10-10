@@ -25,15 +25,9 @@
         <!-- Knop om de modal te openen -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" id="navLogin" data-toggle="modal" href="#loginModal">Aanmelden</a>
+                <a class="nav-link" href="/login">Aanmelden</a>
             </li>
         </ul>
     </div>
 </nav>
-
-<?php
-//    voegt de loginmodal toe
-    require 'views/components/loginmodel/loginmodal.component.php';
-?>
-
 

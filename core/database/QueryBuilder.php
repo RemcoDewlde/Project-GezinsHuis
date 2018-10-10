@@ -9,6 +9,7 @@
 class QueryBuilder
 {
     protected $pdo;
+
     /**
      * @inheritDoc
      */
@@ -29,4 +30,15 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
 
     }
+
+    public function comparator($table){
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE email == {$email} AND password == {$password}");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
+
+    }
 }
+
+
+

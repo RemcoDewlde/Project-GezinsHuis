@@ -39,8 +39,6 @@
                                     '. $items -> mobile.'
                                     <br>
                                     '.$items -> roleid.'
-                                    <br>
-                                    <a href="#" class="card-link">Lees verder..</a>
                                 </p>
                             </div>
                             <div class="card-footer text-right">

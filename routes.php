@@ -14,6 +14,7 @@ $router->get('dashboard/gebruikers', 'controller/dashboardgebruikers.controller.
 $router->get('dashboard/evenement', 'controller/dashboardevenementen.controller.php');
 $router->get('dashboard/evenementform', 'controller/dashboardevenementform.controller.php');
 $router->get('dashboard/gebruikersform', 'controller/dashboardgebruikersform.controller.php');
+$router->get('dashboard/commentaarform', 'controller/dashboardcommentaarform.controller.php');
 
 /**
  * POST routes

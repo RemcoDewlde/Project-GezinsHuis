@@ -11,7 +11,7 @@
     <!-- Email -->
 
     <div class="group">
-        <input type="email" id="mail" name="mail" required>
+        <input type="text" id="mail" name="mail" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Email</label>

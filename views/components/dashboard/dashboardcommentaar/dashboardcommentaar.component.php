@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="card-body">
-                    <h4 class="card-title">Maak een nieuwe gebruiker aan</h4>
+                    <h4 class="card-title">Maak een nieuwe opmerking</h4>
                 </div>
                 <div class="card-footer text-right">
 
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-    <?php
+        <?php
         foreach ($results as $items) {
             echo '<div class="col-sm-4 py-2">
                         <div class="card h-100">
@@ -39,6 +39,8 @@
                                     '. $items -> mobile.'
                                     <br>
                                     '.$items -> roleid.'
+                                    <br>
+                                    <a href="#" class="card-link">Lees verder..</a>
                                 </p>
                             </div>
                             <div class="card-footer text-right">
@@ -54,9 +56,9 @@
         }
         ?>
 
-    <?php
-     require 'views/components/dashboard/dashboardwarningmodal/dashboardwarningmodalgebruiker.component.php';
-    ?>
+        <?php
+        require 'views/components/dashboard/dashboardwarningmodal/dashboardwarningmodalcommentaar.component.php';
+        ?>
 
     </div>
 </div>

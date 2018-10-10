@@ -12,7 +12,7 @@
                 <a href="/dashboard" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-home fa-lg"></i> <span class="d-none d-md-inline">Home</span></a>
                 <a href="/dashboard/gebruikers" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-user fa-lg"></i> <span class="d-none d-md-inline">Gebruikers</span></a>
                 <a href="/dashboard/evenement" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar fa-lg"></i> <span class="d-none d-md-inline">Evenementen</span></a>
-
+                <a href="/dashboard/commentaar" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-comment-o fa-lg"></i> <span class="d-none d-md-inline">Commentaar</span></a>
 
             </div>
         </div>

@@ -7,7 +7,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = varmail(($_POST["mail"]));
     $password = varpassword(($_POST["password"]));
 
-    echo "email: " . $email . "<br>wachtwoord: " . $password;
+    $query = new QueryBuilder("$pdo");
+    $query->comparator("$email", "$password");
+
         }
 
 

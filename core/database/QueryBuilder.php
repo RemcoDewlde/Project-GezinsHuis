@@ -31,11 +31,35 @@ class QueryBuilder
 
     }
 
-    public function comparator($email, $password){
-        $statement = $this->pdo->prepare("SELECT * FROM users WHERE email == {$email} AND password == {$password}");
-        $statement->execute();
-        // voor debug
-        return $statement;
+    public function comparator($email){
+
+
+        $querypassword = $this->pdo->prepare("SELECT password FROM users WHERE email = '{$email}'");
+
+        $querypassword->execute();
+        return $querypassword->fetchAll(PDO::FETCH_CLASS);
+
+        //$statement = $this->pdo->prepare("SELECT * FROM users WHERE email = '{$email}'");
+
+
+        //$queryname = $this->pdo->prepare("SELECT fname FROM users WHERE email = '{$email}'");
+
+        //AND password = '{$password}'
+        //$statement->execute();
+
+
+
+        //$queryname->execute();
+        //return $queryname;
+
+
+
+
+
+
+
     }
 
 }
+
+

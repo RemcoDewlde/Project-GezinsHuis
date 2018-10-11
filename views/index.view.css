@@ -1,0 +1,27 @@
+.withbackground{
+    background-image: url("../assets/Logo-gezinshuis/Achtergrond/GezinshuisRegterink_achtergrond.jpg");
+    height: 80%;
+    color: white;
+}
+.withbackground{
+    margin-bottom: 0px;
+}
+.card-body{
+    margin-top: 15%;
+}
+.col-6{
+    padding: 0px;
+}
+.personel{
+    margin-top: 5em;
+}
+.card{
+    border: 0px;
+    background-color: #e9ecef;
+    text-align: center;
+}
+.col-4 .card img{
+    -webkit-border-radius: 360px;
+    -moz-border-radius: 360px;
+    border-radius: 360px;
+}

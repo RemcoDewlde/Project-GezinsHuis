@@ -7,6 +7,7 @@ $app = [];
 $app['config'] = require '../config.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $email = varmail(($_POST["mail"]));
     $password = varpassword(($_POST["password"]));
 
@@ -16,9 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $results = $app['database']->comparator( $email, $password);
 
-
 }
-
 
         function varmail($data){
             $data = htmlspecialchars($data);

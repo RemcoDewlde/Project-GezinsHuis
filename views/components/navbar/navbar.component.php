@@ -15,7 +15,7 @@
                 <a class="nav-link" href="/contact">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">About us</a>
+                <a class="nav-link" href="/about">Over ons</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/evenementen">Evenement</a>

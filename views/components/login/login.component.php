@@ -25,18 +25,13 @@
         <label>Password</label>
     </div>
 
-
-
-
         <div>
             <!-- Forgot password -->
             <a href="/wachtwoordvergeten">Wachtwoord vergeten</a>
         </div>
 
-
     <!-- Sign in button -->
     <button class="btn btn-primary btn-block my-4" type="submit">Sign in</button>
-
 
 </form>
 <!-- Default form login -->

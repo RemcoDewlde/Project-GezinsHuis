@@ -3,10 +3,9 @@
 /* basic stylings ------------------------------------------ */
 
 .container      {
-
     margin:30px auto 0;
     display:block;
-
+    width: 40%;
     padding:10px 50px 50px;
 }
 

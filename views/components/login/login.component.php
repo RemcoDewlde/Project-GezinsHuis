@@ -1,8 +1,7 @@
 <link rel="stylesheet" href="login.style.css">
 <div class="container">
-<div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6">
+
+
 <!-- Default form login -->
 <form class="text-center border border-light p-5" action="core/login.php" method="post">
 
@@ -35,8 +34,7 @@
 
 </form>
 <!-- Default form login -->
-</div>
-    <div class="col-lg-3"></div>
-</div>
+
+
 </div>
 

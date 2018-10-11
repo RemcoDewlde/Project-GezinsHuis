@@ -74,6 +74,7 @@
         transform: translateX(-45px);
         position: fixed;
     }
+
 .hidden-xs{
     display:none;
 }

@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     $result  = $app['database']->comparator($email);
-    $querypassword = $result->password;
+    $querypassword = $result[0]->password;
 
     if(password_verify($password, $querypassword)){
         echo "Welkom";

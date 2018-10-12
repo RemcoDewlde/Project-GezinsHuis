@@ -39,6 +39,13 @@ class QueryBuilder
         var_dump($statement->fetchAll(PDO::FETCH_ASSOC));
 
     }
+    public function simpleSelectAll($table)
+    {
+        $statement = $this->pdo->prepare("select * from {$table}");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 

@@ -7,9 +7,9 @@
  */
 return [
     'database' => [
-        'name' => 'gasthuis',
+        'name' => 'gezinshuis',
         'username' => 'root',
-        'password' => 'root',
+        'password' => 'toor',
         'connection' => 'mysql:host=localhost:3306',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING

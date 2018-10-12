@@ -5,5 +5,9 @@
  * Date: 07/10/2018
  * Time: 15:20
  */
+require 'core/Events.php';
+
+$results = $app['database']->selectall('events','Events');
+
 
 require 'views/dashboard/dashboardevenement.view.php';

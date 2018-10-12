@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="views/components/about/about.component.css">
 <div class="container">
     <h1 class="display-4"> About Us</h1>
 

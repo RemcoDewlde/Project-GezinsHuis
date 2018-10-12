@@ -7,7 +7,6 @@
  */
 require 'core/Events.php';
 
-$results = $app['database']->selectall('events','Events');
-
+$results = $app['database']->selectAll('events','Events');
 
 require 'views/dashboard/dashboardevenement.view.php';

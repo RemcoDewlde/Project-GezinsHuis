@@ -62,7 +62,7 @@
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="https://randomuser.me/api/portraits/women/79.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h3>-place name-</h3>
+                            <h3>John Doe</h3>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="https://randomuser.me/api/portraits/lego/3.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h3>-place name-</h3>
+                            <h3>John Doe</h3>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="https://randomuser.me/api/portraits/men/81.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h3>-place name-</h3>
+                            <h3>John Doe</h3>
                         </div>
                     </div>
                 </div>

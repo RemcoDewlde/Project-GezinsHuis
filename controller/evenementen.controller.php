@@ -5,4 +5,7 @@
  * Date: 05/10/2018
  * Time: 20:35
  */
+$results = $app['database']->simpleSelectAll('events');
+
+
 require 'views/evenementen.view.php';

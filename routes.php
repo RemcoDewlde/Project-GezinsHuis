@@ -19,4 +19,4 @@ $router->get('dashboard/commentaarform', 'controller/dashboardcommentaarform.con
 /**
  * POST routes
  */
-$router->post('/add_player', 'controllers/add_player.php');
+$router->post('/gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');

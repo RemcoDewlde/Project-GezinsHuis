@@ -7,7 +7,7 @@
 
                 <div class="card-block text-center">
                     <div class="card-header">
-                        <a href="#"><h2><i class="fa fa-user-plus e-o fa-5x"></i></h2></a>
+                        <a href="/dashboard/gebruikersform"><h2><i class="fa fa-user-plus e-o fa-5x"></i></h2></a>
                     </div>
                 </div>
 
@@ -17,7 +17,7 @@
                 <div class="card-footer text-right">
 
 
-                    <a href="#" class="btn btn-primary" role="button">Maak aan</a>
+                    <a href="/dashboard/gebruikersform" class="btn btn-primary" role="button">Maak aan</a>
 
                 </div>
 

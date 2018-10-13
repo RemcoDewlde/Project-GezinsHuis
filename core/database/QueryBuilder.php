@@ -31,14 +31,20 @@ class QueryBuilder
 
     }
 
-    public function comparator($email, $password){
+    public function comparator($email){
 
-        $statement = $this->pdo->prepare("SELECT * FROM users WHERE email = '{$email}'");
-        //AND password = '{$password}'
-        $statement->execute();
-        var_dump($statement->fetchAll(PDO::FETCH_ASSOC));
+        $password = $this->pdo->prepare("SELECT password FROM users WHERE email = '{$email}'");
+
+
+        $password->execute();
+        return $password->fetchAll(PDO::FETCH_ASSOC);
+
+
 
     }
+
+
+
     public function simpleSelectAll($table)
     {
         $statement = $this->pdo->prepare("select * from {$table}");
@@ -47,6 +53,17 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    public function insert($fname, $lname, $email, $password, $mobile){
+
+        $query = $this->pdo->prepare("INSERT INTO users VALUES('{$fname}','{$lname}', '{$email}', '{$password}', '{$mobile}');");
+
+        $query->execute();
+
+
+
+
+    }
 }
 
 

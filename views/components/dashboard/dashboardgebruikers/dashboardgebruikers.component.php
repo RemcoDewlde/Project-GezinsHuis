@@ -7,7 +7,7 @@
 
                 <div class="card-block text-center">
                     <div class="card-header">
-                        <a href="" data-target="#evenementModal" data-toggle="modal"><h2><i class="fa fa-user-plus e-o fa-5x"></i></h2></a>
+                        <a href="/dashboard/gebruikersform"><h2><i class="fa fa-user-plus e-o fa-5x"></i></h2></a>
                     </div>
                 </div>
 
@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-footer text-right">
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#evenementModal">
+                    <button type="button" class="btn btn-primary" href="/dashboard/gebruikersform">
                         Maak aan
                     </button>
 
@@ -42,7 +42,7 @@
                                 </p>
                             </div>
                             <div class="card-footer text-right">
-                                <a class="btn btn-primary" href="#" aria-label="Settings">
+                                <a class="btn btn-primary" href="/" aria-label="Settings">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                 </a>
                                 <a class="btn btn-danger" data-toggle="modal" aria-label="Delete" href="#gebruikerVerwijderMelding">

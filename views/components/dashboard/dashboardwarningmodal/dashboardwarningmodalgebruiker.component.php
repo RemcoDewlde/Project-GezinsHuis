@@ -13,7 +13,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
-                <button type="button" class="btn btn-danger">Verwijder</button>
+                <button type="button" class="btn btn-danger" href="">Verwijder</button>
             </div>
         </div>
     </div>

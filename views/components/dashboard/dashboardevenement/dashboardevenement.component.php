@@ -33,21 +33,26 @@
                                 <p class="card-text"><small class="text-muted"> '. $items-> date_event.' </small></p>
                                 <h4 class="card-title">' . $items->eventname . '</h4>
                                 <p class="card-text">
-                                '. $items->discription.'
+                                '. $items->description.'
                                      <a href="#" class="card-link">Lees verder..</a>
                                 </p>
                             </div>
             
                             <!--Twee knoppen voor admin= delete en aanpassen, bij aanpassen sturen naar een form, hier kan hij de veranderingen toepassen of verwijderen-->
                             <div class="card-footer text-right">
+                            <form method="post" action="event_verwijderen" style="float: right;"> 
+                                <a class="btn btn-danger" data-toggle="modal" aria-label="Delete" href="#evenementVerwijderMelding">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                </a>
+                            </form>
+                            
+                            <form method="post" action="event_aanpassen" style="float: right;">
                                 <a class="btn btn-primary" href="#" aria-label="Settings">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                 </a>
+                            </form>
+                               
             
-                                <a class="btn btn-danger" data-toggle="modal" aria-label="Delete" href="#evenementVerwijderMelding">
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-            
-                                </a>
                             </div>
                         </div>
                     </div>';

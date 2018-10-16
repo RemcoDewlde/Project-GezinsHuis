@@ -20,3 +20,4 @@ $router->get('dashboard/commentaarform', 'controller/dashboardcommentaarform.con
  * POST routes
  */
 $router->post('/gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');
+$router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');

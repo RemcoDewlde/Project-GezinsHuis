@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $app['database'] = new QueryBuilder(
-        Connection::make($app['config']['database']);
+        Connection::make($app['config']['database']));
 
     if($password == $passwordRepeat){
 

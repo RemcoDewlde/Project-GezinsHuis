@@ -15,8 +15,6 @@
                 <input type="text" class="form-control" id="voornaam" required>
             </div>
 
-
-
             <label class="control-label col-sm-2" for="evenementTitel">achternaam</label>
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="achternaam" required>
@@ -64,10 +62,6 @@
                 <input type="tel" class="form-control" id="nummer" placeholder="+31 " required>
             </div>
         </div>
-
-
-
-
 
 
 

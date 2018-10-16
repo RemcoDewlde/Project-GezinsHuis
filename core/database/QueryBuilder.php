@@ -43,8 +43,6 @@ class QueryBuilder
 
     }
 
-
-
     public function simpleSelectAll($table)
     {
         $statement = $this->pdo->prepare("select * from {$table}");
@@ -54,15 +52,32 @@ class QueryBuilder
     }
 
 
-    public function insert($fname, $lname, $email, $password, $mobile){
+    public function insertUser($fname, $lname, $email, $password, $mobile){
 
         $query = $this->pdo->prepare("INSERT INTO users VALUES('{$fname}','{$lname}', '{$email}', '{$password}', '{$mobile}');");
 
         $query->execute();
+    }
 
+    public function insertEvent($date_event, $eventname, $pictures, $description) {
+        $query = $this->pdo->prepare("INSERT INTO events (`date_event`, `eventname`, `pictures`, `description`) VALUES ('{$date_event}', '{$eventname}', '{$pictures}', '{$description}');");
 
+        $query->execute();
+    }
 
+    public function updateEvent($date_event, $eventname, $pictures, $description, $id) {
+        $query = $this->pdo->prepare("UPDATE events 
+        SET (`date_event` = '{$date_event}', `eventname` = '{$eventname}', `pictures` = '{$pictures}', 
+        `description` = '{$description}')
+        WHERE `id` = '{$id}'");
 
+        $query->execute();
+    }
+
+    public function deleteEvent($id) {
+        $query = $this->pdo->prepare("DELETE FROM events WHERE `id` = '{$id}'");
+
+        $query->execute();
     }
 }
 

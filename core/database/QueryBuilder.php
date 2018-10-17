@@ -51,6 +51,12 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function selectOne($data)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM events WHERE `id` = '{$data['id']}' ");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function insertUser($fname, $lname, $email, $password, $mobile){
 
@@ -65,11 +71,11 @@ class QueryBuilder
         $query->execute();
     }
 
-    public function updateEvent($date_event, $eventname, $pictures, $description, $id) {
+    public function updateEvent($data) {
         $query = $this->pdo->prepare("UPDATE events 
-        SET (`date_event` = '{$date_event}', `eventname` = '{$eventname}', `pictures` = '{$pictures}', 
-        `description` = '{$description}')
-        WHERE `id` = '{$id}'");
+        SET `date_event` = '{$data['date_event']}', `eventname` = '{$data['eventname']}', `pictures` = '{$data['pictures']}', 
+        `description` = '{$data['description']}')
+        WHERE `id` = '{$data['id']}'");
 
         $query->execute();
     }

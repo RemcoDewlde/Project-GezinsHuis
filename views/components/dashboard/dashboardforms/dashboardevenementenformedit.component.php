@@ -37,7 +37,7 @@
 
 
         <div class="form-group row">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">plaats evenement</button>
+            <button name="id" value="' . $results[0]['id'] . '" class="btn btn-lg btn-primary btn-block" type="submit">bewerk event</button>
         </div>
 
 

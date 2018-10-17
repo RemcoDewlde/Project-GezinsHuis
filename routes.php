@@ -15,9 +15,14 @@ $router->get('dashboard/evenement', 'controller/dashboardevenementen.controller.
 $router->get('dashboard/evenementform', 'controller/dashboardevenementform.controller.php');
 $router->get('dashboard/gebruikersform', 'controller/dashboardgebruikersform.controller.php');
 $router->get('dashboard/commentaarform', 'controller/dashboardcommentaarform.controller.php');
+$router->get('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
+
 
 /**
  * POST routes
  */
-$router->post('/gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');
+$router->post('dashboard/gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');
 $router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');
+$router->post('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
+$router->post('dashboard/event_verwijderen', 'controller/dashboardevenementverwijderen.controller.php');
+

@@ -11,7 +11,7 @@
                         <p class="card-text"><small class="text-muted">' . $items['date_event'] . '</small></p>
                         <h4 class="card-title">' . $items['eventname'] . '</h4>
                         <p class="card-text">
-                            ' . $items['discription'] . '
+                            ' . $items['description'] . '
                         </p>
                     </div>
                 </div>

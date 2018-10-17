@@ -46,8 +46,8 @@
                                 </a>
                             </form>
                             
-                            <form method="post" action="event_aanpassen" style="float: right;">
-                                <a class="btn btn-primary" href="#" aria-label="Settings">
+                            <form method="get" action="event_bewerken" style="float: right;">
+                                <a class="btn btn-primary" href="event_bewerken" aria-label="Settings">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                 </a>
                             </form>

@@ -80,8 +80,23 @@ class QueryBuilder
         $query->execute();
     }
     public function insertMessage($naam, $email, $bericht, $datum){
-        $query = $this->pdo->prepare("INSERT INTO contact VALUES('{$naam}', '{$email}', '{$bericht}', '{$datum}')");
+        $query = $this->pdo->prepare("INSERT INTO contact(naam, email, bericht, datum) VALUES('{$naam}', '{$email}', '{$bericht}', '{$datum}')");
         $query->execute();
+    }
+
+    public function selectAllMessages($intoClass){
+        $messages = $this->pdo->prepare("SELECT * FROM contact ORDER BY datum");
+        $messages->execute();
+
+        return $messages->fetchAll(PDO::FETCH_CLASS, $intoClass);
+    }
+
+
+    public function selectMessage($id){
+        $message= $this->pdo->prepare("SELECT * FROM contact WHERE id = {$id}");
+        $message->execute();
+
+        return $message->fetchAll(PDO::FETCH_CLASS, 'Berichten');
     }
 }
 

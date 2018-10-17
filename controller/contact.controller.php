@@ -12,6 +12,8 @@ if(Request::uri() == 'bericht'){
     $bericht = $_POST['bericht'];
     $datum = date("Y-m-d H:i:s");
 
+
+
     $verzenden = $app['database']->insertMessage($naam, $email, $bericht, $datum);
 
     header("Location: /contact");

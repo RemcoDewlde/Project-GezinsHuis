@@ -79,6 +79,10 @@ class QueryBuilder
 
         $query->execute();
     }
+    public function insertMessage($naam, $email, $bericht, $datum){
+        $query = $this->pdo->prepare("INSERT INTO contact VALUES('{$naam}', '{$email}', '{$bericht}', '{$datum}')");
+        $query->execute();
+    }
 }
 
 

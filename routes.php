@@ -19,5 +19,7 @@ $router->get('dashboard/commentaarform', 'controller/dashboardcommentaarform.con
 /**
  * POST routes
  */
-$router->post('/gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');
+$router->post('gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');
 $router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');
+$router->post('trylogin', 'controller/login.controller.php');
+$router->post('bericht', 'controller/contact.controller.php');

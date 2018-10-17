@@ -1,10 +1,22 @@
 <link rel="stylesheet" href="views/components/contact/contact.component.css">
 <div class="container">
-    <h1 class="display-4"> Contact Informatie</h1>
-    <br> <br> <br>
-    <p >Als u meer vragen heeft over het project, dan kan u met ons contact opnemen via telefonisch contact of e-mail.</p>
-    <br>
-    <p>Telefoonnummer: <a href=""> 19975304 </a></p>
-    <br>
-    <p>Email Address: <a href="">windesheim@windesheim.windesheim.nl<a></p>
+    <h1 class="display-4"> contact</h1>
+    <form method="post" action="/bericht">
+    <div class="row">
+        <div class="col">
+            <label for="formNaam">naam</label>
+            <input type="text" class="form-control" id="formNaam" name="naam"required>
+        </div>
+        <div class="col">
+            <label for="formEmail">email adres</label>
+            <input type="email" class="form-control" id="formEmail" name="email" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="formBericht">bericht</label>
+        <textarea class="form-control" id="formBericht" rows="4" name="bericht" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-2">Verstuur bericht</button>
+    </form>
 </div>

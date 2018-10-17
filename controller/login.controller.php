@@ -2,40 +2,49 @@
 
 
 
-/**require 'core/database/Connection.php';
-require 'core/database/QueryBuilder.php';
-$app = [];
 
-$app['config'] = require '../config.php';
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if(Request::uri() == 'trylogin') {
 
-    $email = varmail(($_POST["mail"]));
-    $password = varpassword(($_POST["password"]));
+    $email = convert(($_POST["mail"]));
+    $password = convert(($_POST["password"]));
+
 
     $app['database'] = new QueryBuilder(
         Connection::make($app['config']['database'])
     );
 
-    $results = $app['database']->comparator($email, $password);
+    $results = $app['database']->comparator($email);
+
+
+    $ww = implode($results[0]);
+
+
+
+    if(password_verify($password, $ww)){
+        header("Location: /dashboard");
+        exit;
+    }
+    else{
+        echo "gebruikersnaam of wachtwoord werkt niet";
+    }
+
+
 
 }
 
-        function varmail($data){
-            $data = htmlspecialchars($data);
-            $data = stripcslashes($data);
-            return $data;
-        }
 
-        function varpassword($data){
-            $data = htmlspecialchars($data);
-            $data = password_hash($data, PASSWORD_DEFAULT);
-            $data = stripcslashes($data);
-            return $data;
-        }*/
+function convert($data){
+    $data = htmlspecialchars($data);
+    $data = stripcslashes($data);
+    return $data;
+}
 
 
 
 
+
+
+$error = '';
 
 require 'views/login.view.php';

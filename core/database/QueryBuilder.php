@@ -31,15 +31,12 @@ class QueryBuilder
 
     }
 
-    public function comparator($email){
+    public function comparator($email)
+    {
 
         $password = $this->pdo->prepare("SELECT password FROM users WHERE email = '{$email}'");
-
-
         $password->execute();
         return $password->fetchAll(PDO::FETCH_ASSOC);
-
-
 
     }
 
@@ -58,39 +55,43 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insertUser($fname, $lname, $email, $password, $mobile){
+    public function insertUser($fname, $lname, $email, $password, $mobile)
+    {
 
         $query = $this->pdo->prepare("INSERT INTO users VALUES('{$fname}','{$lname}', '{$email}', '{$password}', '{$mobile}');");
-
         $query->execute();
     }
 
-    public function insertEvent($date_event, $eventname, $pictures, $description) {
+    public function insertEvent($date_event, $eventname, $pictures, $description)
+    {
         $query = $this->pdo->prepare("INSERT INTO events (`date_event`, `eventname`, `pictures`, `description`) VALUES ('{$date_event}', '{$eventname}', '{$pictures}', '{$description}');");
-
         $query->execute();
     }
 
-    public function updateEvent($data) {
-        $query = $this->pdo->prepare("UPDATE events 
-        SET `date_event` = '{$data['date_event']}', `eventname` = '{$data['eventname']}', `pictures` = '{$data['pictures']}', 
-        `description` = '{$data['description']}')
+    public function updateEvent($data)
+    {
+        $statement = $this->pdo->prepare("UPDATE events
+        SET `date_event` = '{$data['date_event']}', `eventname` ='{$data['eventname']}', `pictures` = '{$data['pictures']}',`description` = '{$data['description']}'
         WHERE `id` = '{$data['id']}'");
 
-        $query->execute();
+        $statement->execute();
     }
 
-    public function deleteEvent($id) {
+    public function deleteEvent($id)
+    {
         $query = $this->pdo->prepare("DELETE FROM events WHERE `id` = '{$id}'");
 
         $query->execute();
     }
-    public function insertMessage($naam, $email, $bericht, $datum){
+
+    public function insertMessage($naam, $email, $bericht, $datum)
+    {
         $query = $this->pdo->prepare("INSERT INTO contact(naam, email, bericht, datum) VALUES('{$naam}', '{$email}', '{$bericht}', '{$datum}')");
         $query->execute();
     }
 
-    public function selectAllMessages($intoClass){
+    public function selectAllMessages($intoClass)
+    {
         $messages = $this->pdo->prepare("SELECT * FROM contact ORDER BY datum");
         $messages->execute();
 
@@ -98,8 +99,9 @@ class QueryBuilder
     }
 
 
-    public function selectMessage($id){
-        $message= $this->pdo->prepare("SELECT * FROM contact WHERE id = {$id}");
+    public function selectMessage($id)
+    {
+        $message = $this->pdo->prepare("SELECT * FROM contact WHERE id = {$id}");
         $message->execute();
 
         return $message->fetchAll(PDO::FETCH_CLASS, 'Berichten');

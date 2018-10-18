@@ -11,7 +11,7 @@ $router->get('login', 'controller/login.controller.php');
 $router->get('wachtwoordvergeten', 'controller/wachtwoordvergeten.controller.php');
 $router->get('dashboard', 'controller/dashboard.controller.php');
 $router->get('dashboard/gebruikers', 'controller/dashboardgebruikers.controller.php');
-$router->get('dashboard/evenementen', 'controller/dashboardevenementen.controller.php');
+$router->get('dashboard/evenement', 'controller/dashboardevenementen.controller.php');
 $router->get('dashboard/berichten', 'controller/dashboardberichten.controller.php');
 $router->get('dashboard/evenementform', 'controller/dashboardevenementform.controller.php');
 $router->get('dashboard/gebruikersform', 'controller/dashboardgebruikersform.controller.php');

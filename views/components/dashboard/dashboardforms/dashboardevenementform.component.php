@@ -29,22 +29,6 @@
         <div class="form-group row">
             <button class="btn btn-lg btn-primary btn-block" type="submit">plaats evenement</button>
         </div>
-<!--<!--Summernote editor-->-->
-<!--<script>-->
-<!--    $('#summernote').summernote({-->
-<!--        tabsize: 2,-->
-<!--        width: 1200,-->
-<!--        height: 200-->
-<!--    });-->
-<!--</script>-->
-<!---->
-<!--<!--Datepicker-->-->
-<!--<script>-->
-<!--    $('#datepicker').datepicker({-->
-<!--        uiLibrary: 'bootstrap4'-->
-<!--    });-->
-<!--</script>-->
-
 
 </form>
 </div>

@@ -51,9 +51,9 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectOne($data)
+    public function selectOne($id)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM events WHERE `id` = '{$data['id']}' ");
+        $statement = $this->pdo->prepare("SELECT * FROM events WHERE `id` = '{$id}' ");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }

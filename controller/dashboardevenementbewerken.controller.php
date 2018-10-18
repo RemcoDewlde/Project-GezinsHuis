@@ -17,7 +17,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     header('location: /dashboard/evenement');
 }
 elseif($_SERVER["REQUEST_METHOD"] == "GET") {
-    $results = $app['database']->selectOne($_GET);
+    $id = $_GET['id'];
+    $results = $app['database']->selectOne($id);
     require 'views/components/dashboard/dashboardforms/dashboardevenementenformedit.component.php';
 }
 

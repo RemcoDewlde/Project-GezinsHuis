@@ -1,11 +1,3 @@
-
-/**
- * Created by PhpStorm.
- * User: chris
- * Date: 16-10-2018
- * Time: 13:14
- */
-
 <div class="container container-fluid">
     <?php
     echo '
@@ -32,7 +24,7 @@
 
         <div class="form-group row">
             <label for="evenementBeschrijving">Beschrijving</label>
-            <textarea class="form-control" rows="5" name="description" placeholder="Beschrijving" value="' . $results[0]['description'] . '"></textarea>
+            <textarea class="form-control" rows="5" name="description" placeholder="Beschrijving">' . $results[0]['description'] . '"</textarea>
         </div>
 
 

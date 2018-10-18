@@ -1,4 +1,5 @@
 <!-- Modal -->
+
 <div class="modal fade" id="evenementVerwijderMelding" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -13,7 +14,15 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
-                <button type="button" class="btn btn-danger">Verwijder</button>
+                <?php
+                foreach($results as $items) {
+                echo '
+                <form method="post" action="event_verwijderen" type="hidden">
+                    <button type="submit" name="id" class="btn btn-danger" value="'. $items->id .'">Verwijder</button>
+                </form>
+                ';
+                }
+                ?>
             </div>
         </div>
     </div>

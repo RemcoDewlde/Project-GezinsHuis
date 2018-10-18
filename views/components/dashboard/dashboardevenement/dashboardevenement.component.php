@@ -47,9 +47,9 @@
                             </form>
                             
                             <form method="get" action="event_bewerken" style="float: right;">
-                                <a class="btn btn-primary" href="event_bewerken" aria-label="Settings">
+                                <button name="id" value="'. $items->id .'" class="btn btn-primary" href="event_bewerken" aria-label="Settings">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
-                                </a>
+                                </button>
                             </form>
                                
             

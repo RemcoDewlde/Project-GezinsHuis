@@ -15,6 +15,7 @@ $router->get('dashboard/evenement', 'controller/dashboardevenementen.controller.
 $router->get('dashboard/evenementform', 'controller/dashboardevenementform.controller.php');
 $router->get('dashboard/gebruikersform', 'controller/dashboardgebruikersform.controller.php');
 $router->get('dashboard/commentaarform', 'controller/dashboardcommentaarform.controller.php');
+$router->get('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
 
 /**
  * POST routes
@@ -23,3 +24,5 @@ $router->post('gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.con
 $router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');
 $router->post('trylogin', 'controller/login.controller.php');
 $router->post('bericht', 'controller/contact.controller.php');
+$router->post('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
+$router->post('dashboard/event_verwijderen', 'controller/dashboardevenementverwijderen.controller.php');

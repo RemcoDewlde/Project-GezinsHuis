@@ -55,12 +55,6 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insertUser($fname, $lname, $email, $password, $mobile)
-    {
-
-        $query = $this->pdo->prepare("INSERT INTO users VALUES('{$fname}','{$lname}', '{$email}', '{$password}', '{$mobile}');");
-        $query->execute();
-    }
 
     public function insertEvent($date_event, $eventname, $pictures, $description)
     {
@@ -106,6 +100,101 @@ class QueryBuilder
 
         return $message->fetchAll(PDO::FETCH_CLASS, 'Berichten');
     }
+
+    public function selectUserID($email)
+    {
+
+        $password = $this->pdo->prepare("SELECT id FROM users WHERE email = '{$email}'");
+        $password->execute();
+        return $password->fetchAll(PDO::FETCH_ASSOC);
+
+
+    }
+
+    public function selectUser($id)
+    {
+        $user = $this->pdo->prepare("SELECT * FROM users WHERE id = {$id}");
+        $user->execute();
+
+        return $user->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    //select profile
+    public function selectProfile($profile, $id)
+    {
+        $user = $this->pdo->prepare("SELECT * FROM {$profile} WHERE id = {$id}");
+        $user->execute();
+
+        return $user->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    //Insert users
+    public function insertUser($fname, $lname, $email, $password, $mobile, $function)
+    {
+
+        $query = $this->pdo->prepare("INSERT INTO users(fname, lname, email, password, mobile, function) VALUES('{$fname}','{$lname}', '{$email}', '{$password}', '{$mobile}', '{$function}');");
+        $query->execute();
+    }
+
+    public function insertAdmin($id, $nickname, $dob)
+    {
+
+        $query = $this->pdo->prepare("insert into profiles_owners(id, nickname, dob) values({$id}, '{$nickname}', '{$dob}')");
+        $query->execute();
+    }
+
+    public function insertSpecialist($id, $nickname, $dob, $description)
+    {
+
+        $query = $this->pdo->prepare("insert into profiles_doctors(id, nickname, dob, description) values({$id}, '{$nickname}', '{$dob}', '{$description}')");
+        $query->execute();
+    }
+
+    public function insertParent($id, $nickname, $dob, $rights)
+    {
+
+        $query = $this->pdo->prepare("insert into profiles_parents(id, nickname, dob, rights) values({$id}, '{$nickname}', '{$dob}', {$rights})");
+        $query->execute();
+    }
+
+    public function insertKid($id, $nickname, $dob, $reason)
+    {
+
+        $query = $this->pdo->prepare("insert into profiles_kids(id, nickname, dob, reason) values({$id}, '{$nickname}', '{$dob}', '{$reason}')");
+        $query->execute();
+    }
+
+
+    public function selectDBPassword($id)
+    {
+
+        $password = $this->pdo->prepare("SELECT password FROM users WHERE id = {$id}");
+
+
+        $password->execute();
+        return $password->fetchAll(PDO::FETCH_ASSOC);
+
+
+    }
+
+    public function changePassword($password, $id)
+    {
+        $statement = $this->pdo->prepare("update users set password = '{$password}' where id = '{$id}'");
+        $statement->execute();
+
+
+
+    }
+
+    public function alterUser($email, $mobile, $id)
+    {
+        $user = $this->pdo->prepare("update users set email ='{$email}', mobile = '{$mobile}' where id = '{$id}';");
+        $user->execute();
+
+
+
+    }
+
 }
-
-

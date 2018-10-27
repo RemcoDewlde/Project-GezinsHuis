@@ -6,6 +6,9 @@
  * Time: 17:20
  */
 
+session_start();
+if(!empty($_SESSION)) {
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $date_event = convert($_POST['date_event']);
@@ -27,4 +30,9 @@ function convert($data){
     $data = htmlspecialchars($data);
     $data = stripcslashes($data);
     return $data;
+}
+
+}
+else{
+    header('Location: /login');
 }

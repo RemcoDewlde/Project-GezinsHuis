@@ -1,3 +1,12 @@
+<?php
+
+if ($current == 'dashboard'){$_SESSION['previous_uri'] = 'dashboard';}
+elseif($current == 'dashboard/gebruikers'){$_SESSION['previous_uri'] = 'dashboard/gebruikers';}
+elseif($current == 'dashboard/evenement'){$_SESSION['previous_uri'] = 'dashboard/evenement';}
+elseif($current == 'dashboard/commentaar'){$_SESSION['previous_uri'] = 'dashboard/commentaar';}
+elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard/berichten';}
+?>
+
 <link rel="stylesheet" href="../views/components/dashboard/dashboardnavbar/dashboardnavbar.style.css">
 
 
@@ -31,12 +40,12 @@
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user"></i> <span class="d-none d-md-inline">Admin</span>
+                        <i class="fa fa-user"></i> <span class="d-none d-md-inline"><?=$_SESSION['nickname']?></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> <span class="d-none d-md-inline">Bekijk account</span></a>
+                        <a class="dropdown-item" href="/account"><i class="fa fa-user"></i> <span class="d-none d-md-inline">Bekijk account</span></a>
                         <a class="dropdown-item" href="#"><i class="fa fa-users"></i> <span class="d-none d-md-inline">Wissel van account</span></a>
-                        <a class="dropdown-item" href="/"><i class="fa fa-sign-out"></i> <span class="d-none d-md-inline">Log uit</span></a>
+                        <a class="dropdown-item" href="/loguit"><i class="fa fa-sign-out"></i> <span class="d-none d-md-inline">Log uit</span></a>
                     </div>
                 </li>
             </ul>

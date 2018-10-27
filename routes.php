@@ -8,6 +8,10 @@ $router->get('about', 'controller/about.controller.php');
 $router->get('evenementen', 'controller/evenementen.controller.php');
 $router->get('users', 'controllers/users.php');
 $router->get('login', 'controller/login.controller.php');
+$router->get('loguit', 'controller/login.controller.php');
+$router->get('account', 'controller/dashboard.controller.php');
+$router->get('account/veranderwachtwoord', 'controller/dashboard.controller.php');
+
 $router->get('wachtwoordvergeten', 'controller/wachtwoordvergeten.controller.php');
 $router->get('dashboard', 'controller/dashboard.controller.php');
 $router->get('dashboard/gebruikers', 'controller/dashboardgebruikers.controller.php');
@@ -28,3 +32,6 @@ $router->post('bericht', 'controller/contact.controller.php');
 $router->post('berichtlezen', 'controller/dashboardberichten.controller.php');
 $router->post('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
 $router->post('dashboard/event_verwijderen', 'controller/dashboardevenementverwijderen.controller.php');
+
+$router->post('account/nieuwwachtwoord', 'controller/dashboard.controller.php');
+$router->post('veranderaccount', 'controller/dashboard.controller.php');

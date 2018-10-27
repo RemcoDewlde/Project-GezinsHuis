@@ -6,8 +6,17 @@
  * Time: 21:06
  */
 
+
+session_start();
+if(!empty($_SESSION)) {
 require 'core/Users.php';
 
 $results = $app['database']->selectAll('users', 'Users');
 
 require 'views/dashboard/dashboardgebruikers.view.php';
+
+
+}
+else{
+    header('Location: /login');
+}

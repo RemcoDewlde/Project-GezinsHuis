@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+if(!empty($_SESSION)) {
+
 require 'database/Connection.php';
 require 'database/QueryBuilder.php';
 $app = [];
@@ -14,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $app['database'] = new QueryBuilder(
         Connection::make($app['config']['database'])
     );
-    $results = $app['database']->()
+
     $results = $app['database']->delete();
 
 }
@@ -32,6 +35,13 @@ function varpassword($data){
     return $data;
 }
 
+
+
+}
+else{
+    header('Location: /login');
+
+}
 
 
 

@@ -6,4 +6,13 @@
  * Time: 14:32
  */
 
+
+session_start();
+if(!empty($_SESSION)) {
 require 'views/dashboard/dashboardgebruikersform.view.php';
+
+
+}
+else{
+    header('Location: /login');
+}

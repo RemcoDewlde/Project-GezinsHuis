@@ -8,24 +8,55 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">Over ons</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/evenementen">Evenement</a>
-            </li>
+
+            <?php if($current == '') :?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">home <span class="sr-only">(current)</span></a>
+                </li>
+            <?php else :?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">home</a>
+                </li>
+            <?php endif; ?>
+
+            <?php if($current == 'contact') :?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/contact">contact <span class="sr-only">(current)</span></a>
+                </li>
+            <?php else :?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">contact</a>
+                </li>
+            <?php endif; ?>
+
+            <?php if($current == 'about') :?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/about">over ons <span class="sr-only">(current)</span></a>
+                </li>
+            <?php else :?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">over ons</a>
+                </li>
+            <?php endif; ?>
+
+            <?php if($current == 'evenementen') :?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/evenementen">evenementen <span class="sr-only">(current)</span></a>
+                </li>
+            <?php else :?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/evenementen">evenementen</a>
+                </li>
+            <?php endif; ?>
+
+
+
 
         </ul>
         <!-- Knop om de modal te openen -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/login">Aanmelden</a>
+                <a class="nav-link" href="/login">aanmelden</a>
             </li>
         </ul>
     </div>

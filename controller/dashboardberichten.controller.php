@@ -1,5 +1,9 @@
 <?php
 
+
+
+session_start();
+if(!empty($_SESSION)) {
 require 'core/Berichten.php';
 
 
@@ -14,4 +18,9 @@ if(Request::uri() == 'berichtlezen'){
 $berichten = $app['database']->selectAllMessages('Berichten');
 
 require 'views/dashboard/dashboardberichten.view.php';
+
+}
+else{
+    header('Location: /login');
+}
 

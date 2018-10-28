@@ -32,6 +32,7 @@ class Router
         if(array_key_exists($uri, $this->routes[$requesttype])){
             return $this->routes[$requesttype][$uri];
         }
-        throw new Exception('Sorry uri not defined!');
+        //throw new Exception('Sorry uri not defined!');
+        header("location:errorview");
     }
 }

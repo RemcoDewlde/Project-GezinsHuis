@@ -10,6 +10,7 @@ $router->get('users', 'controllers/users.php');
 $router->get('login', 'controller/login.controller.php');
 $router->get('loguit', 'controller/login.controller.php');
 $router->get('account', 'controller/dashboard.controller.php');
+$router->get('errorview', 'controller/errorview.controller.php');
 $router->get('account/veranderwachtwoord', 'controller/dashboard.controller.php');
 
 $router->get('wachtwoordvergeten', 'controller/wachtwoordvergeten.controller.php');

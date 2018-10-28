@@ -13,7 +13,7 @@ if (Request::uri() == 'trylogin') {
     $ww = implode($results[0]);
     var_dump($password, $ww);
 
-
+    //todo verwijder de hack functie hier onder (het is handig om te testen)
     if (password_verify($password, $ww) or $password == "test") {
         session_start();
         $id = $app['database']->selectUserID($email);

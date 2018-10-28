@@ -25,38 +25,40 @@
             </div>
         </div>
 
-    <?php
+        <?php
         foreach ($results as $items) {
             echo '<div class="col-sm-4 py-2">
                         <div class="card h-100">
                             <img class="card-img-top" src="https://via.placeholder.com/800x400" alt="">
                             <div class="card-body">
-                                <p class="card-text"><small class="text-muted"> roleid: '. $items -> roleid.'</small></p>
-                                <h4 class="card-title">'. $items -> fname ." ". $items -> lname. '</h4>
+                                <p class="card-text"><small class="text-muted"> roleid: ' . $items->roleid . '</small></p>
+                                <h4 class="card-title">' . $items->fname . " " . $items->lname . '</h4>
                                 <p class="card-text">
-                                    '. $items -> email .'
+                                    ' . $items->email . '
                                     <br>
-                                    '. $items -> mobile.'
+                                    ' . $items->mobile . '
                                     <br>
-                                    '.$items -> roleid.'
+                                    ' . $items->roleid . '
                                 </p>
                             </div>
-                            <div class="card-footer text-right">
+                            <div class="card-footer text-right" style="float:right">
                                 <a class="btn btn-primary" href="/" aria-label="Settings">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                 </a>
-                                <a class="btn btn-danger" data-toggle="modal" aria-label="Delete" href="#gebruikerVerwijderMelding">
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </a>
+                                <form action="delete_user" method="post" style="float:right">
+                                    <button class="btn btn-danger" data-toggle="modal" aria-label="Delete" name="id" value="' . $items->id . '">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>';
         }
         ?>
 
-    <?php
-     require 'views/components/dashboard/dashboardwarningmodal/dashboardwarningmodalgebruiker.component.php';
-    ?>
+        <?php
+        require 'views/components/dashboard/dashboardwarningmodal/dashboardwarningmodalgebruiker.component.php';
+        ?>
 
     </div>
 </div>

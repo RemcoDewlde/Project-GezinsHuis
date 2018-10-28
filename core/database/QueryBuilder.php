@@ -10,9 +10,6 @@ class QueryBuilder
 {
     protected $pdo;
 
-    /**
-     * @inheritDoc
-     */
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
@@ -20,24 +17,18 @@ class QueryBuilder
 
     public function selectAll($table, $intoClass)
     {
-        /**
-         * @var $statement all data for given table
-         * @var $intoClass define class for output
-         */
         $statement = $this->pdo->prepare("select * from {$table}");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
-
     }
 
     public function comparator($email)
     {
-
         $password = $this->pdo->prepare("SELECT password FROM users WHERE email = '{$email}'");
         $password->execute();
-        return $password->fetchAll(PDO::FETCH_ASSOC);
 
+        return $password->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function simpleSelectAll($table)
@@ -55,6 +46,8 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //<editor-fold desc="EVENTS">
+
 
     public function insertEvent($date_event, $eventname, $pictures, $description)
     {
@@ -71,44 +64,45 @@ class QueryBuilder
         $statement->execute();
     }
 
-    public function deleteEvent($id)
-    {
-        $query = $this->pdo->prepare("DELETE FROM events WHERE `id` = '{$id}'");
+    //</editor-fold>
 
-        $query->execute();
+    public function delete($id, $table)
+    {
+        $statement = $this->pdo->prepare("DELETE FROM {$table} WHERE `id` = {$id}");
+        var_dump($statement);
+
+        $statement->execute();
     }
 
     public function insertMessage($naam, $email, $bericht, $datum)
     {
-        $query = $this->pdo->prepare("INSERT INTO contact(naam, email, bericht, datum) VALUES('{$naam}', '{$email}', '{$bericht}', '{$datum}')");
-        $query->execute();
+        $statement = $this->pdo->prepare("INSERT INTO contact(naam, email, bericht, datum) VALUES('{$naam}', '{$email}', '{$bericht}', '{$datum}')");
+        $statement->execute();
     }
 
     public function selectAllMessages($intoClass)
     {
-        $messages = $this->pdo->prepare("SELECT * FROM contact ORDER BY datum");
-        $messages->execute();
+        $statement = $this->pdo->prepare("SELECT * FROM contact ORDER BY datum");
+        $statement->execute();
 
-        return $messages->fetchAll(PDO::FETCH_CLASS, $intoClass);
+        return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
     }
 
 
     public function selectMessage($id)
     {
-        $message = $this->pdo->prepare("SELECT * FROM contact WHERE id = {$id}");
-        $message->execute();
+        $statement = $this->pdo->prepare("SELECT * FROM contact WHERE id = {$id}");
+        $statement->execute();
 
-        return $message->fetchAll(PDO::FETCH_CLASS, 'Berichten');
+        return $statement->fetchAll(PDO::FETCH_CLASS, 'Berichten');
     }
 
     public function selectUserID($email)
     {
+        $statement = $this->pdo->prepare("SELECT id FROM users WHERE email = '{$email}'");
+        $statement->execute();
 
-        $password = $this->pdo->prepare("SELECT id FROM users WHERE email = '{$email}'");
-        $password->execute();
-        return $password->fetchAll(PDO::FETCH_ASSOC);
-
-
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function selectUser($id)
@@ -119,7 +113,6 @@ class QueryBuilder
         return $user->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
     //select profile
     public function selectProfile($profile, $id)
     {
@@ -129,72 +122,57 @@ class QueryBuilder
         return $user->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
-    //Insert users
+    //<editor-fold desc="INSERT USERS">
     public function insertUser($fname, $lname, $email, $password, $mobile, $function)
     {
-
-        $query = $this->pdo->prepare("INSERT INTO users(fname, lname, email, password, mobile, function) VALUES('{$fname}','{$lname}', '{$email}', '{$password}', '{$mobile}', '{$function}');");
-        $query->execute();
+        $statement = $this->pdo->prepare("INSERT INTO users(fname, lname, email, password, mobile, function) VALUES('{$fname}','{$lname}', '{$email}', '{$password}', '{$mobile}', '{$function}');");
+        $statement->execute();
     }
 
     public function insertAdmin($id, $nickname, $dob)
     {
-
-        $query = $this->pdo->prepare("insert into profiles_owners(id, nickname, dob) values({$id}, '{$nickname}', '{$dob}')");
-        $query->execute();
+        $statement = $this->pdo->prepare("insert into profiles_owners(id, nickname, dob) values({$id}, '{$nickname}', '{$dob}')");
+        $statement->execute();
     }
 
     public function insertSpecialist($id, $nickname, $dob, $description)
     {
-
-        $query = $this->pdo->prepare("insert into profiles_doctors(id, nickname, dob, description) values({$id}, '{$nickname}', '{$dob}', '{$description}')");
-        $query->execute();
+        $statement = $this->pdo->prepare("insert into profiles_doctors(id, nickname, dob, description) values({$id}, '{$nickname}', '{$dob}', '{$description}')");
+        $statement->execute();
     }
 
     public function insertParent($id, $nickname, $dob, $rights)
     {
-
-        $query = $this->pdo->prepare("insert into profiles_parents(id, nickname, dob, rights) values({$id}, '{$nickname}', '{$dob}', {$rights})");
-        $query->execute();
+        $statement = $this->pdo->prepare("insert into profiles_parents(id, nickname, dob, rights) values({$id}, '{$nickname}', '{$dob}', {$rights})");
+        $statement->execute();
     }
 
     public function insertKid($id, $nickname, $dob, $reason)
     {
-
-        $query = $this->pdo->prepare("insert into profiles_kids(id, nickname, dob, reason) values({$id}, '{$nickname}', '{$dob}', '{$reason}')");
-        $query->execute();
+        $statement = $this->pdo->prepare("insert into profiles_kids(id, nickname, dob, reason) values({$id}, '{$nickname}', '{$dob}', '{$reason}')");
+        $statement->execute();
     }
 
+    //</editor-fold>
 
     public function selectDBPassword($id)
     {
+        $statement = $this->pdo->prepare("SELECT password FROM users WHERE id = {$id}");
+        $statement->execute();
 
-        $password = $this->pdo->prepare("SELECT password FROM users WHERE id = {$id}");
-
-
-        $password->execute();
-        return $password->fetchAll(PDO::FETCH_ASSOC);
-
-
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function changePassword($password, $id)
     {
         $statement = $this->pdo->prepare("update users set password = '{$password}' where id = '{$id}'");
         $statement->execute();
-
-
-
     }
 
     public function alterUser($email, $mobile, $id)
     {
         $user = $this->pdo->prepare("update users set email ='{$email}', mobile = '{$mobile}' where id = '{$id}';");
         $user->execute();
-
-
-
     }
 
 }

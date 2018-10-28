@@ -26,6 +26,7 @@ $router->get('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.
  * POST routes
  */
 $router->post('gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');
+$router->post('dashboard/delete_user', 'controller/deleteUser.controller.php');
 $router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');
 $router->post('trylogin', 'controller/login.controller.php');
 $router->post('bericht', 'controller/contact.controller.php');

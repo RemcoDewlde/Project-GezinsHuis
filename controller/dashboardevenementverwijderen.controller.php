@@ -7,14 +7,10 @@
  */
 
 
-
 session_start();
 if(!empty($_SESSION)) {
-$results = $app['database']->deleteEvent($_POST['id']);
-header('location: /dashboard/evenement');
-
-
-}
-else{
+    $results = $app['database']->delete($_POST['id'], 'events');
+    header('location: /dashboard/evenement');
+} else {
     header('Location: /login');
 }

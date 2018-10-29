@@ -1,10 +1,7 @@
 <?php
 
 
-
-
-
-if(Request::uri() == 'trylogin') {
+if (Request::uri() == 'trylogin') {
 
     $email = convert(($_POST["mail"]));
     $password = convert(($_POST["password"]));
@@ -14,15 +11,14 @@ if(Request::uri() == 'trylogin') {
 
 
     $ww = implode($results[0]);
+    var_dump($password, $ww);
 
-
-
-    if(password_verify($password, $ww)){
+    //todo verwijder de hack functie hier onder (het is handig om te testen)
+    if (password_verify($password, $ww) or $password == "test") {
         session_start();
         $id = $app['database']->selectUserID($email);
 
         $user = $app['database']->selectUser($id[0]['id']);
-
 
 
         $_SESSION['id'] = $user[0]['id'];
@@ -30,33 +26,28 @@ if(Request::uri() == 'trylogin') {
         $_SESSION['lname'] = $user[0]['lname'];
         $_SESSION['email'] = $user[0]['email'];
         $_SESSION['mobile'] = $user[0]['mobile'];
-        $_SESSION['function'] =  $user[0]["function"];
+        $_SESSION['function'] = $user[0]["function"];
 
 
-
-
-        if($_SESSION['function'] == 'Admin'){
+        if ($_SESSION['function'] == 'Admin') {
             $profile = $app['database']->selectProfile('profiles_owners', $id[0]['id']);
 
             $_SESSION['nickname'] = $profile[0]['nickname'];
             $_SESSION['dob'] = $profile[0]['dob'];
             //$_SESSION['picture'] = $profile[0]['picture'];
-        }
-        elseif($_SESSION['function'] == 'Specialist'){
+        } elseif ($_SESSION['function'] == 'Specialist') {
             $profile = $app['database']->selectProfile('profiles_doctors', $id[0]['id']);
 
             $_SESSION['nickname'] = $profile[0]['nickname'];
             $_SESSION['dob'] = $profile[0]['dob'];
             $_SESSION['omschrijving'] = $profile[0]['description'];
-        }
-        elseif ($_SESSION['function'] == 'Ouder'){
+        } elseif ($_SESSION['function'] == 'Ouder') {
             $profile = $app['database']->selectProfile('profiles_parents', $id[0]['id']);
 
             $_SESSION['nickname'] = $profile[0]['nickname'];
             $_SESSION['dob'] = $profile[0]['dob'];
             $_SESSION['rights'] = $profile[0]['rights'];
-        }
-        elseif ($_SESSION['function'] == 'Kind'){
+        } elseif ($_SESSION['function'] == 'Kind') {
             $profile = $app['database']->selectProfile('profiles_kids', $id[0]['id']);
 
             $_SESSION['nickname'] = $profile[0]['nickname'];
@@ -70,22 +61,18 @@ if(Request::uri() == 'trylogin') {
         exit;
 
 
-    }
-    else{
+    } else {
         echo "gebruikersnaam of wachtwoord klopt niet";
     }
 
 
-
-}
-elseif(Request::uri() == 'login') {
+} elseif (Request::uri() == 'login') {
 
 
     $error = '';
 
     require 'views/login.view.php';
-}
-elseif(Request::uri() == 'loguit') {
+} elseif (Request::uri() == 'loguit') {
     session_start();
 
     // remove all session variables
@@ -99,7 +86,8 @@ elseif(Request::uri() == 'loguit') {
 }
 
 
-function convert($data){
+function convert($data)
+{
     $data = htmlspecialchars($data);
     $data = stripcslashes($data);
     return $data;

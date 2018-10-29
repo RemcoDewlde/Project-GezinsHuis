@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="gebruikerVerwijderMelding" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="gebruikerVerwijderMelding" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,7 +14,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
-                <button type="button" class="btn btn-danger" href="">Verwijder</button>
+                <button type="submit" class="btn btn-danger">Verwijder</button>
             </div>
         </div>
     </div>

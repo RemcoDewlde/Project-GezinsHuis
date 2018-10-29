@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <h2>Wachtwoord veranderen</h2>
+
 <p>Door de <a href=''>link</a> te volgen kan je je wachtwoord veranderen</p>
 </body>
 </html>
@@ -37,3 +38,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         return $data;
     }
 mail($naar, $onderwerp, $bericht, $headers);
+//todo waarom staat de wachtwoordvergeten functie in de database map???

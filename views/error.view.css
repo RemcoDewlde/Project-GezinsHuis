@@ -5,3 +5,7 @@
     color: cadetblue;
     text-align: center;
  }
+
+body {
+    min-height: 90em;
+}

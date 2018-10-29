@@ -27,20 +27,26 @@
 
     <?php
         foreach ($results as $items) {
+
             echo '<div class="col-sm-4 py-2">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="https://via.placeholder.com/800x400" alt="">
-                            <div class="card-body">
-                                <p class="card-text"><small class="text-muted"> roleid: '. $items -> roleid.'</small></p>
+                        <div class="card h-100">';
+                    if($_SESSION['function'] == 'Admin'){
+                        echo '<img class="card-img-top" src="https://via.placeholder.com/800x400" alt="">';}
+                        echo '<form action="/dashboard/gebruiker" method="post"><input hidden value="'. $items->id .'" name="id"><a onclick="$(this).closest(\'form\').submit()" href="#">
+                              <div class="card-body">
                                 <h4 class="card-title">'. $items -> fname ." ". $items -> lname. '</h4>
                                 <p class="card-text">
                                     '. $items -> email .'
                                     <br>
                                     '. $items -> mobile.'
                                     <br>
-                                    '.$items -> roleid.'
+                                    '.$items->function.'
                                 </p>
                             </div>
+                            </a>
+                            </form>';
+                            if($_SESSION['function'] == 'Admin'){
+                                echo '
                             <div class="card-footer text-right">
                                 <a class="btn btn-primary" href="/" aria-label="Settings">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
@@ -48,9 +54,10 @@
                                 <a class="btn btn-danger" data-toggle="modal" aria-label="Delete" href="#gebruikerVerwijderMelding">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 </a>
-                            </div>
-                        </div>
+                            </div>';}
+                       echo ' </div>
                     </div>';
+
         }
         ?>
 

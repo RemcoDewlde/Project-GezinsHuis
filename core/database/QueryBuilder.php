@@ -197,4 +197,22 @@ class QueryBuilder
 
     }
 
+    public function addNote($by, $date, $description, $kidID)
+    {
+        $user = $this->pdo->prepare("insert into day2dayinformation(byname, date, description, idkid) values('{$by}', '{$date}', '{$description}', '{$kidID}')");
+        $user->execute();
+
+
+
+    }
+
+    public function selectNotes($kidID)
+    {
+        $user = $this->pdo->prepare("select * from day2dayinformation where idkid = {$kidID}");
+        $user->execute();
+
+        return $user->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 }

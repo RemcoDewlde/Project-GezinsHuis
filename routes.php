@@ -15,6 +15,7 @@ $router->get('account/veranderwachtwoord', 'controller/dashboard.controller.php'
 $router->get('wachtwoordvergeten', 'controller/wachtwoordvergeten.controller.php');
 $router->get('dashboard', 'controller/dashboard.controller.php');
 $router->get('dashboard/gebruikers', 'controller/dashboardgebruikers.controller.php');
+
 $router->get('dashboard/evenement', 'controller/dashboardevenementen.controller.php');
 $router->get('dashboard/berichten', 'controller/dashboardberichten.controller.php');
 $router->get('dashboard/evenementform', 'controller/dashboardevenementform.controller.php');
@@ -35,3 +36,7 @@ $router->post('dashboard/event_verwijderen', 'controller/dashboardevenementverwi
 
 $router->post('account/nieuwwachtwoord', 'controller/dashboard.controller.php');
 $router->post('veranderaccount', 'controller/dashboard.controller.php');
+
+$router->post('dashboard/plaatsopmerking', 'controller/dashboardgebruiker.controller.php');
+
+$router->post('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');

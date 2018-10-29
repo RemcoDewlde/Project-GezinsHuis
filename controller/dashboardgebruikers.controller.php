@@ -9,11 +9,16 @@
 
 session_start();
 if(!empty($_SESSION)) {
-require 'core/Users.php';
+    if(Request::uri() == 'dashboard/gebruikers'){
+        require 'core/Users.php';
 
-$results = $app['database']->selectAll('users', 'Users');
+        $results = $app['database']->selectAll('users', 'Users');
 
-require 'views/dashboard/dashboardgebruikers.view.php';
+        require 'views/dashboard/dashboardgebruikers.view.php';
+
+
+    }
+
 
 
 }

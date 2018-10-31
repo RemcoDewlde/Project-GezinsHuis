@@ -1,6 +1,7 @@
 #sidebar {
     overflow: hidden;
     z-index: 3;
+    position: fixed;
 }
 #sidebar .list-group {
     min-width: 400px;
@@ -74,9 +75,7 @@
         transform: translateX(-45px);
         position: fixed;
     }
-.hidden-xs{
-    display:none;
-}
+
 
     #sidebar.show {
         transform: translateX(0);
@@ -140,10 +139,26 @@
 }
 
 
-@media (min-width:768px){
-    #mobileimg{
-        display:none;
-    }
+
+
+.sidebar-header{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
+#dismiss {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+    color: #ccc;
+
+
+}
+#dismiss:hover{
+    background-color: #2c2c2c;
+
+}
 

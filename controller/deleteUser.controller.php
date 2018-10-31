@@ -8,7 +8,7 @@
 session_start();
 if (!empty($_SESSION)) {
     $result = $app['database']->delete($_POST['id'], 'users');
-    header("location:dashboard/gebruikers");
+    header("location: ../dashboard/gebruikers");
 } else {
     header('Location: /login');
 }

@@ -10,14 +10,23 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
 <link rel="stylesheet" href="../views/components/dashboard/dashboardnavbar/dashboardnavbar.style.css">
 
 
+
+<!--Navbar items-->
 <div class="container-fluid">
 
     <div class="row d-flex d-md-block flex-nowrap wrapper">
-        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
+        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width" id="sidebar">
             <div class="list-group border-0 card text-center text-md-left customfix">
 
-                <!--Navbar items-->
-                <a href="/dashboard" class="list-group-item d-inline-block collapsed navbar-brand" data-parent="#sidebar" id="desktopimg"><img src="../assets/Logo-gezinshuis/Breed/GezinshuisRegterink_Logo.png" class="logo hidden-xs"><img src="../assets/Logo-gezinshuis/Icon/Icon.png" class="logo visible-xs hidden-lg" id="mobileimg"></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="dismiss">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+
+                <div class="sidebar-header">
+                    <img src="../assets/Logo-gezinshuis/Breed/GezinshuisRegterink_Logo.png"  class="logo">
+
+                </div>
                 <a href="/dashboard" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-home fa-lg"></i> <span class="d-none d-md-inline">Home</span></a>
                 <a href="/dashboard/gebruikers" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-user fa-lg"></i> <span class="d-none d-md-inline">Gebruikers</span></a>
                 <a href="/dashboard/evenement" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar fa-lg"></i> <span class="d-none d-md-inline">Evenementen</span></a>
@@ -29,6 +38,8 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
     </div>
 </div>
 
+
+<!--Top navbar-->
 <div class="pos-f-t">
     <nav class="navbar navbar-dark bg-dark" id="navbar" role="navigation">
         <!--Hamburger icon-->
@@ -38,7 +49,7 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
         <div class="navbar-expand-md">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                         <i class="fa fa-user"></i> <span class="d-none d-md-inline"><?=$_SESSION['nickname']?></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">

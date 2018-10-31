@@ -14,8 +14,8 @@
             foreach($berichten as $items){
 
                     echo "<tr><td>" . $items -> datum . "</td><td>". $items -> naam . "</td><td>" . $items -> email . "</td><td>
-                    <form method='post' action='/berichtlezen'>
-                        <button class='button button-primary' type='submit'>
+                    <form method='get' action='/berichtlezen'>
+                        <button class='btn btn-primary' type='submit'>
                             <i class=\"fa fa-chevron-right fa-lg\" aria-hidden=\"true\">
                                 <input name='id' value='$items->id' hidden>
                             </i>

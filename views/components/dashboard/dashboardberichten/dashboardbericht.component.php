@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="views/components/contact/contact.component.css">
 <div class="container">
+
+    <form action="../<?=$_SESSION['previous_uri']?>">
+        <button type="submit" class="btn btn-primary">Verlaat</button>
+    </form>
     <form method="post" action="/bericht">
         <?php
             foreach($berichten as $items){

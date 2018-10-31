@@ -24,6 +24,9 @@ $router->get('dashboard/gebruikersform', 'controller/dashboardgebruikersform.con
 $router->get('dashboard/commentaarform', 'controller/dashboardcommentaarform.controller.php');
 $router->get('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
 
+
+$router->get('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');
+$router->get('berichtlezen', 'controller/dashboardberichten.controller.php');
 /**
  * POST routes
  */
@@ -32,7 +35,7 @@ $router->post('dashboard/delete_user', 'controller/deleteUser.controller.php');
 $router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');
 $router->post('trylogin', 'controller/login.controller.php');
 $router->post('bericht', 'controller/contact.controller.php');
-$router->post('berichtlezen', 'controller/dashboardberichten.controller.php');
+//$router->post('berichtlezen', 'controller/dashboardberichten.controller.php');
 $router->post('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
 $router->post('dashboard/event_verwijderen', 'controller/dashboardevenementverwijderen.controller.php');
 
@@ -41,4 +44,4 @@ $router->post('veranderaccount', 'controller/dashboard.controller.php');
 
 $router->post('dashboard/plaatsopmerking', 'controller/dashboardgebruiker.controller.php');
 
-$router->post('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');
+//$router->post('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');

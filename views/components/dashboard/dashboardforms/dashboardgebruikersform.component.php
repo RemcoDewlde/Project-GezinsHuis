@@ -21,12 +21,7 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label class="control-label col-sm-2" for="evenementTitel">gebruikersnaam</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="gebruikersnaam">
-            </div>
-        </div>
+
 
         <div class="form-group row">
             <label class="control-label col-sm-2" for="datum">geboortedatum</label>

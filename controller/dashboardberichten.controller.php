@@ -8,7 +8,7 @@ require 'core/Berichten.php';
 
 
 if(Request::uri() == 'berichtlezen'){
-    $id = $_POST['id'];
+    $id = $_GET['id'];
     $berichten = $app['database']->selectMessage($id);
 
     require 'views/dashboard/dashboardbericht.view.php';

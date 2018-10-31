@@ -5,11 +5,21 @@
 session_start();
 if(!empty($_SESSION)) {
 
+    function convert($data){
+        $data = htmlspecialchars($data);
+        $data = stripcslashes($data);
+        return $data;
+    }
+    function convertpassword($data){
+        $data = password_hash($data, PASSWORD_DEFAULT);
+        return $data;
+    }
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $fname = convert($_POST['voornaam']);
-    $lname = convert($_POST['achternaam']);
-    $nickname = convert($_POST['gebruikersnaam']);
+    $fname = convert(ucfirst($_POST['voornaam']));
+    $lname = convert(ucfirst($_POST['achternaam']));
+    $nickname = $fname. "" .$lname;
     $dob = convert($_POST['datum']);
     $email = convert($_POST['email']);
     $password = convert($_POST['wachtwoord']);
@@ -63,15 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-function convert($data){
-    $data = htmlspecialchars($data);
-    $data = stripcslashes($data);
-    return $data;
-}
-function convertpassword($data){
-    $data = password_hash($data, PASSWORD_DEFAULT);
-    return $data;
-}
+
 
 
 

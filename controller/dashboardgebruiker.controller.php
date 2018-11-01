@@ -17,7 +17,6 @@ if (!empty($_SESSION)) {
         $email = $user[0]['email'];
         $mobile = $user[0]['mobile'];
         $function = $user[0]["function"];
-        $nickname = $user[0]["nickname"];
 
         if ($function == 'Admin') {
             $profile = $app['database']->selectProfile('profiles_owners', $id);

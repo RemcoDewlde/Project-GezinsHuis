@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="views/components/contact/contact.component.css">
 <div class="container">
-
+<br>
     <form action="../<?= $_SESSION['previous_uri'] ?>" style="margin-top: 1vh">
         <button type="submit" class="btn btn-primary">Verlaat</button>
     </form>

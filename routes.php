@@ -30,6 +30,10 @@ $router->get('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.
 $router->get('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');
 $router->get('berichtlezen', 'controller/dashboardberichten.controller.php');
 
+
+$router->get('nieuwbericht', 'controller/dashboardberichten.controller.php');
+
+
 //</editor-fold>
 /**
  * POST routes
@@ -43,6 +47,8 @@ $router->post('dashboard/delete_user', 'controller/deleteUser.controller.php');
 $router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');
 $router->post('trylogin', 'controller/login.controller.php');
 $router->post('bericht', 'controller/contact.controller.php');
+
+$router->post('verstuur', 'controller/dashboardberichten.controller.php');
 //$router->post('berichtlezen', 'controller/dashboardberichten.controller.php');
 $router->post('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.controller.php');
 $router->post('dashboard/event_verwijderen', 'controller/dashboardevenementverwijderen.controller.php');

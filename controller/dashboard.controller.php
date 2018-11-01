@@ -9,6 +9,11 @@
 session_start();
 if(!empty($_SESSION)) {
 
+
+
+
+
+
     if(Request::uri() == 'account'){
 
         require 'views/dashboard/dashboardaccount.view.php';
@@ -89,7 +94,6 @@ if(!empty($_SESSION)) {
     else{
         require 'views/dashboard/dashboard.view.php';
     }
-
 
 
 

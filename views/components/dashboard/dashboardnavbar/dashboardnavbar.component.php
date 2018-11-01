@@ -1,5 +1,4 @@
 <?php
-
 if ($current == 'dashboard'){$_SESSION['previous_uri'] = 'dashboard';}
 elseif($current == 'dashboard/gebruikers'){$_SESSION['previous_uri'] = 'dashboard/gebruikers';}
 elseif($current == 'dashboard/evenement'){$_SESSION['previous_uri'] = 'dashboard/evenement';}

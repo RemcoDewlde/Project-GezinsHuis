@@ -16,10 +16,7 @@ if(!empty($_SESSION)) {
 
         require 'views/dashboard/dashboardgebruikers.view.php';
 
-
     }
-
-
 
 }
 else{

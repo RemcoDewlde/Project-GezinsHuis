@@ -2,15 +2,12 @@
 
 
 session_start();
-if(!empty($_SESSION)) {
+if (!empty($_SESSION)) {
 
-    if(Request::uri() == 'dashboard/gebruiker'){
+    if (Request::uri() == 'dashboard/gebruiker') {
 
         a:
-
-
         $id = $_GET['id'];
-
 
         $user = $app['database']->selectUser($id);
 
@@ -20,7 +17,6 @@ if(!empty($_SESSION)) {
         $email = $user[0]['email'];
         $mobile = $user[0]['mobile'];
         $function = $user[0]["function"];
-
 
         if ($function == 'Admin') {
             $profile = $app['database']->selectProfile('profiles_owners', $id);
@@ -51,17 +47,13 @@ if(!empty($_SESSION)) {
             $reason = $profile[0]['reason'];
 
             //$_SESSION['idcareforschema'] = $profile[0]['idcareforschema'];
-
         }
-
 
         $opmerkingen = $app['database']->selectNotes($id);
         require 'views/dashboard/dashboardgebruiker.view.php';
 
 
-    }
-
-    elseif(Request::uri() == 'dashboard/plaatsopmerking'){
+    } elseif (Request::uri() == 'dashboard/plaatsopmerking') {
 
         $opmerking = convert($_POST['opmerking']);
         $date = $datum = date("Y-m-d H:i:s");
@@ -74,9 +66,7 @@ if(!empty($_SESSION)) {
     }
 
 
-
-}
-else{
+} else {
     header('Location: /login');
 }
 

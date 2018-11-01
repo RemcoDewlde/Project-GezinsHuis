@@ -13,7 +13,6 @@ if(!empty($_SESSION)) {
         require 'core/Users.php';
 
         $results = $app['database']->selectAll('users', 'Users');
-
         require 'views/dashboard/dashboardgebruikers.view.php';
 
     }

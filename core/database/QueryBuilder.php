@@ -39,9 +39,9 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectOne($id)
+    public function selectOne($table, $id)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM events WHERE `id` = '{$id}' ");
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE `id` = '{$id}' ");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -179,9 +179,6 @@ class QueryBuilder
     {
         $user = $this->pdo->prepare("insert into day2dayinformation(byname, date, description, idkid) values('{$by}', '{$date}', '{$description}', '{$kidID}')");
         $user->execute();
-
-
-
     }
 
     public function selectNotes($kidID)
@@ -190,7 +187,13 @@ class QueryBuilder
         $user->execute();
 
         return $user->fetchAll(PDO::FETCH_ASSOC);
+    }
 
+    public function safeuseredit($data)
+    {
+        $statement = $this->pdo->prepare("Update users set fname = '{$data["fname"]}', lname = '{$data["lname"]}', email = '{$data["email"]}',
+                                          mobile = '{$data["mobile"]}', nickname = '{$data["nickname"]}', function = '{$data["function"]}' where id = '{$data["id"]}' ");
+        $statement->execute();
     }
 
 }

@@ -1,19 +1,19 @@
 <div class="container">
     <table class="table table-hover">
-    <thead>
+        <thead>
         <tr>
             <th>datum</th>
             <th>naam</th>
             <th>emailadres</th>
         </tr>
 
-    </thead>
+        </thead>
 
-    <tbody>
-    <?php
-            foreach($berichten as $items){
+        <tbody>
+        <?php
+        foreach ($berichten as $items) {
 
-                    echo "<tr><td>" . $items -> datum . "</td><td>". $items -> naam . "</td><td>" . $items -> email . "</td><td>
+            echo "<tr><td>" . $items->datum . "</td><td>" . $items->naam . "</td><td>" . $items->email . "</td><td>
                     <form method='get' action='/berichtlezen'>
                         <button class='btn btn-primary' type='submit'>
                             <i class=\"fa fa-chevron-right fa-lg\" aria-hidden=\"true\">
@@ -22,12 +22,12 @@
                         </button>
                     </form>
                     </td></tr>";
-                }
+        }
 
-    ?>
+        ?>
 
 
-    </tbody>
+        </tbody>
     </table>
 </div>
 

@@ -2,6 +2,8 @@
 /**
  * GET routes
  */
+//<editor-fold desc="GET request">
+
 $router->get('', 'controller/index.controller.php');
 $router->get('contact', 'controller/contact.controller.php');
 $router->get('about', 'controller/about.controller.php');
@@ -27,9 +29,15 @@ $router->get('dashboard/event_bewerken', 'controller/dashboardevenementbewerken.
 
 $router->get('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');
 $router->get('berichtlezen', 'controller/dashboardberichten.controller.php');
+
+//</editor-fold>
 /**
  * POST routes
  */
+
+//<editor-fold desc="POST request">
+
+
 $router->post('gebruiker_toevoegen', 'controller/dashboardgebruikertoevoegen.controller.php');
 $router->post('dashboard/delete_user', 'controller/deleteUser.controller.php');
 $router->post('dashboard/event_toevoegen', 'controller/dashboardevenementtoevoegen.controller.php');
@@ -43,5 +51,9 @@ $router->post('account/nieuwwachtwoord', 'controller/dashboard.controller.php');
 $router->post('veranderaccount', 'controller/dashboard.controller.php');
 
 $router->post('dashboard/plaatsopmerking', 'controller/dashboardgebruiker.controller.php');
+$router->post('dashboard/edit_user', 'controller/edit_user.controller.php');
+$router->post('dashboard/safe_useredit', 'controller/safe_useredit.controller.php');
 
 //$router->post('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');
+
+//</editor-fold>

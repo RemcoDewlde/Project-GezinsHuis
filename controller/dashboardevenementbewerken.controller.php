@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 elseif($_SERVER["REQUEST_METHOD"] == "GET") {
     $id = $_GET['id'];
-    $results = $app['database']->selectOne($id);
+    $results = $app['database']->selectOne('events', $id);
     require 'views/components/dashboard/dashboardforms/dashboardevenementenformedit.component.php';
 }
 

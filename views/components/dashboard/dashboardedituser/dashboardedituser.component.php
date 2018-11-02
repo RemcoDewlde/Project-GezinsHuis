@@ -31,7 +31,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-tie"></i></span>
                   </div>
-              <input type="text" class="form-control" placeholder="Nickname" aria-label="nickname" name="nickname" value="' . $result[0]["nickname"] . '">
+              <input type="text" class="form-control" placeholder="Nickname" aria-label="nickname" name="nickname" value="' . $profile[0]['nickname'] . '">
             </div>';
 
         echo '<div class="input-group mb-3">
@@ -39,7 +39,8 @@
                     <label class="input-group-text" for="inputGroupSelect01">functie:</label>
                   </div>
                   <select class="custom-select" id="inputGroupSelect01" name="function">
-                    <option "' . $result[0]["function"] . '">' . $result[0]["function"] . '</option>
+                    <option "' . $result[0]["function"] . '" disabled>' . $result[0]["function"] . '</option>
+                    
                     <option value="Admin">Admin</option>
                     <option value="Ouder">Ouder</option>
                     <option value="Specialist">Specialist</option>
@@ -58,13 +59,15 @@
 
         if ($result[0]["function"] == "Ouder") {
             echo '
+            <input type="hidden" name="id" value="' . $result[0]["id"] . '">
+            <input type="hidden" name="function" value="' . $result[0]["function"] . '">
             <h3>Voeg kind toe aan gebruiker</h3>
             <br>
-            <select class="custom-select" id="inputGroupSelect01" name="function">
+            <select class="custom-select" id="inputGroupSelect01" name="kind">
                 <option>Kind...</option>
             ';
-            foreach ($users as $user) {
-                echo '<option value="' . $user["id"] . '" name="kind" >' . $user["fname"] . " " . $user["lname"] . '</option>';
+            foreach ($children as $child) {
+                echo '<option value="' . $child["id"] . '">' . $child["fname"] . " " . $child["lname"] . '</option>';
             }
             echo '
                     </select>
@@ -78,15 +81,17 @@
         <form action="addDoctorToChild" method="post">
         ';
 
-        if ($result[0]["function"] == "Kind") {
+        if ($result[0]["function"] == "Specialist") {
             echo '
+        <input type="hidden" name="id" value="' . $result[0]["id"] . '">
+        <input type="hidden" name="function" value="' . $result[0]["function"] . '">
         <h3>Koppel doctor aan kind</h3>
         <br>
-        <select class="custom-select" id="inputGroupSelect01" name="function">
-            <option>Doktor...</option>
+        <select class="custom-select" id="inputGroupSelect01" name="kind">
+            <option>Specialist...</option>
         ';
-            foreach ($users as $user) {
-                echo '<option value="' . $user["id"] . '" name="kind" >' . $user["fname"] . " " . $user["lname"] . '</option>';
+            foreach ($children as $child) {
+                echo '<option value="' . $child["id"] . '">' . $child["fname"] . " " . $child["lname"] . '</option>';
             }
             echo '
                     </select>

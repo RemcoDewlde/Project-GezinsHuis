@@ -127,6 +127,21 @@ class QueryBuilder
 
         return $user->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function selectUsers($id)
+    {
+        $user = $this->pdo->prepare("SELECT * FROM users WHERE id in ($id)");
+        $user->execute();
+
+        return $user->fetchAll(PDO::FETCH_CLASS, 'Users');
+    }
+
+    public function selectChildren()
+    {
+        $user = $this->pdo->prepare("SELECT * FROM users WHERE function = 'Kind'");
+        $user->execute();
+
+        return $user->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     //select profile
     public function selectProfile($profile, $id)
@@ -228,6 +243,19 @@ class QueryBuilder
     {
         $statement = $this->pdo->prepare("update users set password = '{$password}' where id = '{$id}'");
         $statement->execute();
+    }
+
+    public function pairUsers($userID, $childID, $function)
+    {
+        $statement = $this->pdo->prepare("insert into pair_users(userID, childID, function) values('{$userID}', '{$childID}', '{$function}')");
+        $statement->execute();
+    }
+
+    public function selectPairedChild($id)
+    {
+        $statement = $this->pdo->prepare("Select childID from pair_users where userID = '{$id}'");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

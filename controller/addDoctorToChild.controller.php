@@ -6,4 +6,7 @@
  * Time: 17:49
  */
 
-var_dump($_POST);
+$KindID = $_POST['kind'];
+$UserID = $_POST['id'];
+$Functie = $_POST['function'];
+$app['database']->pairUsers($userID, $childID, $Functie);

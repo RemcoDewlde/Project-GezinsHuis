@@ -80,9 +80,15 @@ class QueryBuilder
         $statement->execute();
     }
 
-    public function selectAllMessages($intoClass)
+    public function insertDashboardMessage($email, $onderwerp, $bericht, $datum, $voorID)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM contact ORDER BY datum");
+        $statement = $this->pdo->prepare("INSERT INTO contact(email, onderwerp, bericht, datum, voorID) VALUES('{$email}', '{$onderwerp}', '{$bericht}', '{$datum}', '{$voorID}')");
+        $statement->execute();
+    }
+
+    public function selectAllMessages($intoClass, $id)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM contact where voorID = '{$id}' ORDER BY datum");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
@@ -92,6 +98,15 @@ class QueryBuilder
     public function selectMessage($id)
     {
         $statement = $this->pdo->prepare("SELECT * FROM contact WHERE id = {$id}");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS, 'Berichten');
+    }
+
+
+    public function selectAdminMessages()
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM contact WHERE voorID = 0");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_CLASS, 'Berichten');
@@ -194,6 +209,19 @@ class QueryBuilder
         $statement = $this->pdo->prepare("Update users set fname = '{$data["fname"]}', lname = '{$data["lname"]}', email = '{$data["email"]}',
                                           mobile = '{$data["mobile"]}', nickname = '{$data["nickname"]}', function = '{$data["function"]}' where id = '{$data["id"]}' ");
         $statement->execute();
+    }
+    public function read($id){
+        $statement = $this->pdo->prepare("update contact set gelezen = 1 where id = {$id}");
+
+        $statement->execute();
+    }
+
+    public function unreadMessages($id){
+        $statement = $this->pdo->prepare("select * from contact where gelezen = 0 and voorID = {$id}");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function resetpassword($password, $id)

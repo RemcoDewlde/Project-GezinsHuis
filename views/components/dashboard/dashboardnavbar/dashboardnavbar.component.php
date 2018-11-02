@@ -1,9 +1,15 @@
 <?php
+
+$ongelezenberichten = $app['database']->unreadMessages($_SESSION['id']);
+
 if ($current == 'dashboard'){$_SESSION['previous_uri'] = 'dashboard';}
 elseif($current == 'dashboard/gebruikers'){$_SESSION['previous_uri'] = 'dashboard/gebruikers';}
 elseif($current == 'dashboard/evenement'){$_SESSION['previous_uri'] = 'dashboard/evenement';}
 elseif($current == 'dashboard/commentaar'){$_SESSION['previous_uri'] = 'dashboard/commentaar';}
 elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard/berichten';}
+
+
+
 ?>
 
 <link rel="stylesheet" href="../views/components/dashboard/dashboardnavbar/dashboardnavbar.style.css">
@@ -29,7 +35,7 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
                 <a href="/dashboard" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-home fa-lg"></i> <span class="d-none d-md-inline">Home</span></a>
                 <a href="/dashboard/gebruikers" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-user fa-lg"></i> <span class="d-none d-md-inline">Gebruikers</span></a>
                 <a href="/dashboard/evenement" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar fa-lg"></i> <span class="d-none d-md-inline">Evenementen</span></a>
-                <a href="/dashboard/berichten" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> <span class="d-none d-md-inline">Berichten</span><span class="badge badge-primary badge-pill">12</span></a>
+                <a href="/dashboard/berichten" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> <span class="d-none d-md-inline">Berichten</span> <span class="badge badge-primary badge-pill"><?=count($ongelezenberichten)?></span></a>
 
 
             </div>

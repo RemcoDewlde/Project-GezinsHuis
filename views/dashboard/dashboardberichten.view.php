@@ -15,9 +15,15 @@
 
 <?php
 
-require 'views/components/dashboard/dashboardnavbar/dashboardnavbar.component.php';
-require 'views/components/dashboard/dashboardberichten/dashboardberichten.component.php';
 
+require 'views/components/dashboard/dashboardnavbar/dashboardnavbar.component.php';
+
+if(Request::uri() == 'nieuwbericht'){
+    require 'views/components/dashboard/dashboardberichten/dashboardnieuwbericht.component.php';
+}
+else {
+    require 'views/components/dashboard/dashboardberichten/dashboardberichten.component.php';
+}
 
 ?>
 

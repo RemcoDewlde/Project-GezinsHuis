@@ -41,12 +41,12 @@
                             <!--Twee knoppen voor admin= delete en aanpassen, bij aanpassen sturen naar een form, hier kan hij de veranderingen toepassen of verwijderen-->
                             <div class="card-footer text-right">
                             <form method="post" action="event_verwijderen" style="float: right;"> 
-                                <a class="btn btn-danger" data-toggle="modal" aria-label="Delete" href="#evenementVerwijderMelding">
+                                <button name="id" value="'. $items->id .'" class="btn btn-danger" data-toggle="modal" aria-label="Delete" href="event_verwijderen">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </a>
+                                </button>
                             </form>
                             
-                            <form method="post" action="event_bewerken" style="float: right;">
+                            <form method="get" action="event_bewerken" style="float: right;">
                                 <button name="id" value="'. $items->id .'" class="btn btn-primary" href="event_bewerken" aria-label="Settings">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
                                 </button>

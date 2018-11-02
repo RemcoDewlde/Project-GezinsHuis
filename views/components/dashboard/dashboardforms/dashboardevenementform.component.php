@@ -16,7 +16,7 @@
 
         <div class="form-group row">
             <label for="example-date-input">Datum</label>
-            <input id="datepicker" name="date_event" placeholder="mm-dd-yyyy" required>
+            <input id="datepicker" name="date_event" placeholder="yyyy-mm-dd" required>
         </div>
 
 
@@ -32,3 +32,12 @@
 
 </form>
 </div>
+
+<!--Datepicker-->
+<script>
+    $('#datepicker').datepicker({
+        format: 'yyyy/mm/dd',
+        uiLibrary: 'bootstrap4'
+
+    });
+</script>

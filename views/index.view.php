@@ -34,7 +34,7 @@
             </div>
             <div class="col-6">
 
-                    <img class="card-img-top" src="assets/Logo-gezinshuis/fotos/pexels-photo1.jpeg" alt="fairground">
+                <img class="card-img-top" src="assets/pexels/pexels00001.jpeg" alt="fairground">
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
         <div class="row">
         <div class="col-6">
 
-            <img class="card-img-top" src="assets/Logo-gezinshuis/fotos/pexels-photo2.jpeg" alt="fairground">
+            <img class="card-img-top" src="assets/pexels/pexels00002.jpeg" alt="fairground">
         </div>
 
             <div class="col-6">

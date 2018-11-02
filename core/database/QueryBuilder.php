@@ -196,4 +196,10 @@ class QueryBuilder
         $statement->execute();
     }
 
+    public function resetpassword($password, $id)
+    {
+        $statement = $this->pdo->prepare("update users set password = '{$password}' where id = '{$id}'");
+        $statement->execute();
+    }
+
 }

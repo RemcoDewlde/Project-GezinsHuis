@@ -53,6 +53,7 @@ $router->post('veranderaccount', 'controller/dashboard.controller.php');
 $router->post('dashboard/plaatsopmerking', 'controller/dashboardgebruiker.controller.php');
 $router->post('dashboard/edit_user', 'controller/edit_user.controller.php');
 $router->post('dashboard/safe_useredit', 'controller/safe_useredit.controller.php');
+$router->post('dashboard/resetpassword', 'controller/resetpassword.controller.php');
 
 //$router->post('dashboard/gebruiker', 'controller/dashboardgebruiker.controller.php');
 

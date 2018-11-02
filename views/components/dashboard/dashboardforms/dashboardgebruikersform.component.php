@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 1vh">
     <form class="form-horizontal" method="post" action="/gebruiker_toevoegen">
 
         <div class="form-group row">

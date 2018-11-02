@@ -38,19 +38,39 @@
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">functie:</label>
                   </div>
-                  <select class="custom-select" id="inputGroupSelect01" name="function">
+                  <select class="custom-select" id="inputGroupSelect01" name="function" disabled>
                     <option "' . $result[0]["function"] . '">' . $result[0]["function"] . '</option>
                     <option value="Admin">Admin</option>
                     <option value="Ouder">Ouder</option>
                     <option value="Specialist">Specialist</option>
                     <option value="Kind">Kind</option>
                   </select>
-            </div>';
-
-        ?>
+            </div>'; ?>
 
         <button class="btn btn-primary" type="submit"> Veranderingen opslaan</button>
         <button class="btn btn-danger" type="reset"> Reset</button>
 
     </form>
+
+    <form action="resetpassword" method="post">
+        <?php
+        echo '<hr>
+              <h3>Reset wachtwoord</h3>
+            ';
+
+        echo '
+                <input type="hidden" name="id" value="' . $result[0]["id"] . '">
+                <div class="input-group mb-3">
+                  <input type="password" name="password" class="form-control" placeholder="Nieuw wachtwoord" aria-label="password" required>
+                </div>';
+
+        echo '<div class="input-group mb-3">
+                  <input type="password" name="checkpass" class="form-control" placeholder="Herhaal wachtwoord" aria-label="password" required>
+                </div>';
+
+        ?>
+        <button class="btn btn-primary" type="submit">Wachtwoord veranderen</button>
+    </form>
+
+
 </div>

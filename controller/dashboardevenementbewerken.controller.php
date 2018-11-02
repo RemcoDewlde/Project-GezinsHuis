@@ -22,7 +22,7 @@ if(!empty($_SESSION)) {
     elseif($_SERVER["REQUEST_METHOD"] == "GET") {
         $id = $_GET['id'];
         $results = $app['database']->selectOne('events', $id);
-        require 'views/components/dashboard/dashboardforms/dashboardevenementenformedit.component.php';
+        require 'views/dashboard/dashboardevenementenedit.view.php';
     }
 }
 else{

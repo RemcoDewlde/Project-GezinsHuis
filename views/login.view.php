@@ -12,7 +12,11 @@
 <body>
 <?php
 
-require 'views/components/login/login.component.php';
+
+    require 'views/components/login/login.component.php';
+
+
+
 
 
 ?>

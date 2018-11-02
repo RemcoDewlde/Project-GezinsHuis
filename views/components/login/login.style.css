@@ -47,6 +47,8 @@ input:focus ~ label, input:valid ~ label        {
     top:-20px;
     font-size:14px;
     color:#5264AE;
+
+
 }
 
 /* BOTTOM BARS ================================= */
@@ -61,8 +63,21 @@ input:focus ~ label, input:valid ~ label        {
     transition:0.2s ease all;
     -moz-transition:0.2s ease all;
     -webkit-transition:0.2s ease all;
+
+
 }
+.bar-red:before, .bar-red:after     {
+    background:#d9534f;
+
+}
+
+.errorinput {
+    border-bottom: 1px solid #d9534f;
+}
+
+
 .bar:before {
+
     left:50%;
 }
 .bar:after {
@@ -115,3 +130,4 @@ form{
 button{
 
 }
+

@@ -11,7 +11,7 @@ if (Request::uri() == 'trylogin') {
 
 
     $ww = implode($results[0]);
-    var_dump($password, $ww);
+
 
     //todo verwijder de hack functie hier onder (het is handig om te testen)
     if (password_verify($password, $ww) or $password == "test") {
@@ -64,16 +64,17 @@ if (Request::uri() == 'trylogin') {
 
 
     } else {
-        echo "gebruikersnaam of wachtwoord klopt niet";
+        $error = TRUE;
+        goto login;
     }
 
 
 } elseif (Request::uri() == 'login') {
+    $error = FALSE;
 
-
-    $error = '';
-
+    login:
     require 'views/login.view.php';
+
 } elseif (Request::uri() == 'loguit') {
     session_start();
 

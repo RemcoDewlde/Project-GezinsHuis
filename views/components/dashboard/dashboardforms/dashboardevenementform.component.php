@@ -1,5 +1,5 @@
 <div class="container container-fluid">
-<form method="post" action="event_toevoegen">
+    <form method="post" action="event_toevoegen" enctype="multipart/form-data">
 
         <div class="form-group row">
             <label for="evenementTitel">Evenement titel</label>

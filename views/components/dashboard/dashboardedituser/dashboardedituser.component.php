@@ -28,11 +28,11 @@
             </div>';
 
         echo '<div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-tie"></i></span>
-                  </div>
-              <input type="text" class="form-control" placeholder="Nickname" aria-label="nickname" name="nickname" value="' . $profile[0]['nickname'] . '">
-            </div>';
+                 <div class="input-group-prepend">
+                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-tie"></i></span>
+                 </div>
+             <input type="text" class="form-control" placeholder="Nickname" aria-label="nickname" name="nickname" value="' . $profile[0]['nickname'] . '">
+           </div>';
 
         echo '<div class="input-group mb-3">
                   <div class="input-group-prepend">

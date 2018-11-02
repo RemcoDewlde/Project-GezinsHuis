@@ -27,7 +27,7 @@
                 echo '<div class="col-sm-4 py-2">
                         <div class="card h-100">
             
-                            <img class="card-img-top" src="https://via.placeholder.com/800x400" alt="">
+                            <img class="card-img-top" src="../' . $items->pictures . '" alt="">
             
                             <div class="card-body">
                                 <p class="card-text"><small class="text-muted"> '. $items-> date_event.' </small></p>

@@ -38,39 +38,81 @@
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">functie:</label>
                   </div>
-                  <select class="custom-select" id="inputGroupSelect01" name="function" disabled>
+                  <select class="custom-select" id="inputGroupSelect01" name="function">
                     <option "' . $result[0]["function"] . '">' . $result[0]["function"] . '</option>
                     <option value="Admin">Admin</option>
                     <option value="Ouder">Ouder</option>
                     <option value="Specialist">Specialist</option>
                     <option value="Kind">Kind</option>
                   </select>
-            </div>'; ?>
-
-        <button class="btn btn-primary" type="submit"> Veranderingen opslaan</button>
-        <button class="btn btn-danger" type="reset"> Reset</button>
-
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit"> Veranderingen opslaan</button>
+            <button class="btn btn-danger" type="reset"> Reset</button>
     </form>
-
-    <form action="resetpassword" method="post">
-        <?php
-        echo '<hr>
-              <h3>Reset wachtwoord</h3>
-            ';
+    <hr>';
 
         echo '
+              <form action="addChildToParent" method="post">
+              ';
+
+        if ($result[0]["function"] == "Ouder") {
+            echo '
+            <h3>Voeg kind toe aan gebruiker</h3>
+            <br>
+            <select class="custom-select" id="inputGroupSelect01" name="function">
+                <option>Kind...</option>
+            ';
+            foreach ($users as $user) {
+                echo '<option value="' . $user["id"] . '" name="kind" >' . $user["fname"] . " " . $user["lname"] . '</option>';
+            }
+            echo '
+                    </select>
+                    <button class="btn btn-primary" type="submit" style="margin-top: 1vh">kind toevoegen aan gebruiker</button>
+                </form>';
+        }
+        ?>
+
+        <?php
+        echo '
+        <form action="addDoctorToChild" method="post">
+        ';
+
+        if ($result[0]["function"] == "Kind") {
+            echo '
+        <h3>Koppel doctor aan kind</h3>
+        <br>
+        <select class="custom-select" id="inputGroupSelect01" name="function">
+            <option>Doktor...</option>
+        ';
+            foreach ($users as $user) {
+                echo '<option value="' . $user["id"] . '" name="kind" >' . $user["fname"] . " " . $user["lname"] . '</option>';
+            }
+            echo '
+                    </select>
+                    <button class="btn btn-primary" type="submit" style="margin-top: 1vh">kind toevoegen aan gebruiker</button>
+                </form>';
+        }
+        ?>
+
+        <form action="resetpassword" method="post">
+            <?php
+            echo '<hr>
+              <h3>Reset wachtwoord</h3>
+            ';
+            echo '
                 <input type="hidden" name="id" value="' . $result[0]["id"] . '">
                 <div class="input-group mb-3">
                   <input type="password" name="password" class="form-control" placeholder="Nieuw wachtwoord" aria-label="password" required>
                 </div>';
 
-        echo '<div class="input-group mb-3">
+            echo '<div class="input-group mb-3">
                   <input type="password" name="checkpass" class="form-control" placeholder="Herhaal wachtwoord" aria-label="password" required>
                 </div>';
 
-        ?>
-        <button class="btn btn-primary" type="submit">Wachtwoord veranderen</button>
-    </form>
+            ?>
+            <button class="btn btn-primary" type="submit">Wachtwoord veranderen</button>
+        </form>
 
 
 </div>

@@ -9,7 +9,6 @@ elseif($current == 'dashboard/commentaar'){$_SESSION['previous_uri'] = 'dashboar
 elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard/berichten';}
 
 
-
 ?>
 
 <link rel="stylesheet" href="../views/components/dashboard/dashboardnavbar/dashboardnavbar.style.css">
@@ -20,7 +19,7 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
 <div class="container-fluid">
 
     <div class="row d-flex d-md-block flex-nowrap wrapper">
-        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width" id="sidebar">
+        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
             <div class="list-group border-0 card text-center text-md-left customfix">
 
 
@@ -33,7 +32,9 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
 
                 </div>
                 <a href="/dashboard" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-home fa-lg"></i> <span class="d-none d-md-inline">Home</span></a>
-                <a href="/dashboard/gebruikers" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-user fa-lg"></i> <span class="d-none d-md-inline">Gebruikers</span></a>
+                <?php if($_SESSION['function'] != 'Kind'){echo "
+                    <a href=\"/dashboard/gebruikers\" class=\"list-group-item d-inline-block collapsed\" data-parent=\"#sidebar\"><i class=\"fa fa-user fa-lg\"></i> <span class=\"d-none d-md-inline\">Gebruikers</span></a>
+                ";}?>
                 <a href="/dashboard/evenement" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar fa-lg"></i> <span class="d-none d-md-inline">Evenementen</span></a>
                 <a href="/dashboard/berichten" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> <span class="d-none d-md-inline">Berichten</span> <span class="badge badge-primary badge-pill"><?=count($ongelezenberichten)?></span></a>
 
@@ -59,7 +60,6 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/account"><i class="fa fa-user"></i> <span class="d-none d-md-inline">Bekijk account</span></a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-users"></i> <span class="d-none d-md-inline">Wissel van account</span></a>
                         <a class="dropdown-item" href="/loguit"><i class="fa fa-sign-out"></i> <span class="d-none d-md-inline">Log uit</span></a>
                     </div>
                 </li>
@@ -67,7 +67,6 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
         </div>
     </nav>
 </div>
-
 
 
 

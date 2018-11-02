@@ -29,6 +29,8 @@ if (Request::uri() == 'trylogin') {
         $_SESSION['function'] = $user[0]["function"];
         $_SESSION['nickname'] = $user[0]["nickname"];
 
+        $_SESSION['sidebar'] = 0;
+
 
 
         if ($_SESSION['function'] == 'Admin') {

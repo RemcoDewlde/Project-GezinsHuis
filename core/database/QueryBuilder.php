@@ -74,9 +74,9 @@ class QueryBuilder
         $statement->execute();
     }
 
-    public function insertMessage($naam, $email, $bericht, $datum)
+    public function insertMessage($email, $onderwerp, $bericht, $datum)
     {
-        $statement = $this->pdo->prepare("INSERT INTO contact(naam, email, bericht, datum) VALUES('{$naam}', '{$email}', '{$bericht}', '{$datum}')");
+        $statement = $this->pdo->prepare("INSERT INTO contact(email, onderwerp, bericht, datum) VALUES('{$email}','{$onderwerp}', '{$bericht}', '{$datum}')");
         $statement->execute();
     }
 

@@ -1,22 +1,24 @@
 <div class="container">
 
     <div class="row">
+<?php
+    if($_SESSION['function'] == 'Admin'){
+        echo "
+        <div class=\"col-sm-4 py-2\">
+            <div class=\"card h-100\">
 
-        <div class="col-sm-4 py-2">
-            <div class="card h-100">
-
-                <div class="card-block text-center">
-                    <div class="card-header">
-                        <a href="/dashboard/gebruikersform"><h2><i class="fa fa-user-plus e-o fa-5x"></i></h2></a>
+                <div class=\"card-block text-center\">
+                    <div class=\"card-header\">
+                        <a href=\"/dashboard/gebruikersform\"><h2><i class=\"fa fa-user-plus e-o fa-5x\"></i></h2></a>
                     </div>
                 </div>
 
-                <div class="card-body">
-                    <h4 class="card-title">Maak een nieuwe gebruiker aan</h4>
+                <div class=\"card-body\">
+                    <h4 class=\"card-title\">Maak een nieuwe gebruiker aan</h4>
                 </div>
-                <div class="card-footer text-right">
+                <div class=\"card-footer text-right\">
 
-                    <button type="button" class="btn btn-primary" href="/dashboard/gebruikersform">
+                    <button type=\"button\" class=\"btn btn-primary\" href=\"/dashboard/gebruikersform\">
                         Maak aan
                     </button>
 
@@ -24,6 +26,10 @@
 
             </div>
         </div>
+        ";
+    }
+?>
+
 
         <?php
         foreach ($results as $items) {

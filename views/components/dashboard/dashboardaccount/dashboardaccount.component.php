@@ -1,6 +1,7 @@
 
 
 <div class="container">
+    <br>
     <form action="<?=$_SESSION['previous_uri']?>" id="cancel"></form>
     <form action="veranderaccount" method="post">
         <div class="form-group row">

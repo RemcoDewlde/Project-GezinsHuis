@@ -7,17 +7,17 @@
  */
 if(Request::uri() == 'bericht'){
 
-    $naam = $_POST['naam'];
+    $onderwerp = $_POST['onderwerp'];
     $email = $_POST['email'];
     $bericht = $_POST['bericht'];
     $datum = date("Y-m-d H:i:s");
 
+var_dump($_POST);
+echo $datum;
+    $verzenden = $app['database']->insertMessage($email, $onderwerp, $bericht, $datum);
 
-
-    $verzenden = $app['database']->insertMessage($naam, $email, $bericht, $datum);
-
-    header("Location: /contact");
-    exit;
+    //header("Location: /contact");
+    //exit;
 }
 else {
 

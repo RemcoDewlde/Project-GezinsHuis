@@ -2,9 +2,10 @@
     overflow: hidden;
     z-index: 3;
     position: fixed;
+    max-width: 250px;
 }
 #sidebar .list-group {
-    min-width: 400px;
+    min-width: 250px;
     background-color: #333;
     min-height: 100vh;
 }
@@ -157,8 +158,5 @@
 
 
 }
-#dismiss:hover{
-    background-color: #2c2c2c;
 
-}
 

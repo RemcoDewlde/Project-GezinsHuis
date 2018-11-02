@@ -38,6 +38,13 @@ class QueryBuilder
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function selectEvents(){
+
+        $statement = $this->pdo->prepare("Select * from events order by date_event DESC ");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function selectOne($table, $id)
     {

@@ -39,7 +39,7 @@
                     <label class="input-group-text" for="inputGroupSelect01">functie:</label>
                   </div>
                   <select class="custom-select" id="inputGroupSelect01" name="function">
-                    <option "' . $result[0]["function"] . '" disabled>' . $result[0]["function"] . '</option>
+                    <option "' . $result[0]["function"] . '" disabled selected>' . $result[0]["function"] . '</option>
                     
                     <option value="Admin">Admin</option>
                     <option value="Ouder">Ouder</option>
@@ -85,7 +85,7 @@
             echo '
         <input type="hidden" name="id" value="' . $result[0]["id"] . '">
         <input type="hidden" name="function" value="' . $result[0]["function"] . '">
-        <h3>Koppel doctor aan kind</h3>
+        <h3>Koppel specialist aan kind</h3>
         <br>
         <select class="custom-select" id="inputGroupSelect01" name="kind">
             <option>Specialist...</option>

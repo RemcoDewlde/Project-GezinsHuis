@@ -19,13 +19,13 @@
                 </li>
             <?php endif; ?>
 
-            <?php if($current == 'contact') :?>
+            <?php if($current == 'evenementen') :?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/contact">contact <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/evenementen">evenementen <span class="sr-only">(current)</span></a>
                 </li>
             <?php else :?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">contact</a>
+                    <a class="nav-link" href="/evenementen">evenementen</a>
                 </li>
             <?php endif; ?>
 
@@ -39,15 +39,17 @@
                 </li>
             <?php endif; ?>
 
-            <?php if($current == 'evenementen') :?>
+            <?php if($current == 'contact') :?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/evenementen">evenementen <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/contact">contact <span class="sr-only">(current)</span></a>
                 </li>
             <?php else :?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/evenementen">evenementen</a>
+                    <a class="nav-link" href="/contact">contact</a>
                 </li>
             <?php endif; ?>
+
+
 
 
 

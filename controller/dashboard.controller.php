@@ -92,6 +92,7 @@ if(!empty($_SESSION)) {
 
 
     else{
+        $results = $app['database']->selectEvents();
         require 'views/dashboard/dashboard.view.php';
     }
 

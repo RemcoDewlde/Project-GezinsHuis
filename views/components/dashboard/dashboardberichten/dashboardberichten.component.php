@@ -19,6 +19,7 @@
             <th>onderwerp</th>
             <th>emailadres</th>
             <th></th>
+            <th></th>
         </tr>
 
         </thead>
@@ -31,6 +32,15 @@
                     <form method='get' action='/berichtlezen'>
                         <button class='btn btn-primary' type='submit'>
                             <i class=\"fa fa-chevron-right fa-lg\" aria-hidden=\"true\">
+                                <input name='id' value='$items->id' hidden>
+                            </i>
+                        </button>
+                    </form>
+                    </td>
+                    <td>
+                    <form method='post' action='/berichtverwijderen'>
+                        <button class='btn btn-danger' type='submit'>
+                            <i class=\"fa fa-close fa-lg\" aria-hidden=\"true\">
                                 <input name='id' value='$items->id' hidden>
                             </i>
                         </button>
@@ -60,6 +70,7 @@
             <th>onderwerp</th>
             <th>emailadres</th>
             <th></th>
+            <th></th>
         </tr>
 
         </thead>
@@ -76,7 +87,17 @@
                             </i>
                         </button>
                     </form>
-                    </td></tr>";
+                    </td>
+                    <td>
+                    <form method='post' action='/berichtverwijderen'>
+                        <button class='btn btn-danger' type='submit'>
+                            <i class=\"fa fa-close fa-lg\" aria-hidden=\"true\">
+                                <input name='id' value='$items->id' hidden>
+                            </i>
+                        </button>
+                    </form>
+                    </td>
+                    </tr>";
         }
 
 echo "        

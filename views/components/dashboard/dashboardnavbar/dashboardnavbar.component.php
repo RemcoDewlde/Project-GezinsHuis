@@ -35,7 +35,7 @@ elseif($current == 'dashboard/berichten'){$_SESSION['previous_uri'] = 'dashboard
                 <?php if($_SESSION['function'] != 'Kind'){echo "
                     <a href=\"/dashboard/gebruikers\" class=\"list-group-item d-inline-block collapsed\" data-parent=\"#sidebar\"><i class=\"fa fa-user fa-lg\"></i> <span class=\"d-none d-md-inline\">Gebruikers</span></a>
                 ";}?>
-                <a href="/dashboard/evenement" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar fa-lg"></i> <span class="d-none d-md-inline">Evenementen</span></a>
+                <a href="/dashboard/evenementen" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-calendar fa-lg"></i> <span class="d-none d-md-inline">Evenementen</span></a>
                 <a href="/dashboard/berichten" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> <span class="d-none d-md-inline">Berichten</span> <span class="badge badge-primary badge-pill"><?=count($ongelezenberichten)?></span></a>
 
 

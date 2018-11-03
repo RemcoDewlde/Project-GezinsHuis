@@ -95,7 +95,7 @@ class QueryBuilder
 
     public function selectAllMessages($intoClass, $id)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM contact where voorID = '{$id}' ORDER BY datum");
+        $statement = $this->pdo->prepare("SELECT * FROM contact where voorID = '{$id}' ORDER BY datum DESC ");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
@@ -220,7 +220,7 @@ class QueryBuilder
 
     public function selectNotes($kidID)
     {
-        $user = $this->pdo->prepare("select * from day2dayinformation where idkid = {$kidID}");
+        $user = $this->pdo->prepare("select * from day2dayinformation where idkid = {$kidID} order by date desc");
         $user->execute();
 
         return $user->fetchAll(PDO::FETCH_ASSOC);

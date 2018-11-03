@@ -13,8 +13,10 @@
 </head>
 <body>
     <?php
-        require 'views/components/dashboard/dashboardnavbar/dashboardnavbar.component.php';
-        require 'views/components/dashboard/dashboardevenement/dashboardevenement.component.php';
+    require 'views/components/dashboard/dashboardnavbar/dashboardnavbar.component.php';
+    require 'views/components/dashboard/dashboardevenement/dashboardevenementen.component.php';
+
+
     ?>
 
 

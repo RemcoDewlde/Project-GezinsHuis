@@ -17,6 +17,14 @@ if(!empty($_SESSION)) {
         require 'views/dashboard/dashboardbericht.view.php';
         exit;
     }
+    elseif(Request::uri() == 'berichtverwijderen'){
+        $id = $_POST['id'];
+        $results = $app['database']->delete($id, 'contact');
+
+        header("Location: dashboard/berichten");
+        exit;
+
+    }
     elseif(Request::uri() == 'nieuwbericht'){
 
         require 'core/Users.php';

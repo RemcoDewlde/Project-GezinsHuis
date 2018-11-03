@@ -1,9 +1,9 @@
 
-
-
+<div class="container">
+<br>
 <form action="/account" id="cancel"></form>
 <form action="nieuwwachtwoord" method="post">
-    <div class="container">
+
         <div class="form-group row">
             <div class="col-md-2">
                 <label>Huidig wachtwoord</label>
@@ -50,14 +50,12 @@
 
 
 
-        <a href="#">
-            Wachtwoord vergeten?
-        </a>
+
 
         <button type="submit" class="btn" form="cancel">Cancel</button>
         <button type="submit" class="btn btn-primary">Verander wachtwoord</button>
     </div>
-    </div>
+
 </form>
 
 <script>

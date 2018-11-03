@@ -9,13 +9,20 @@
 
 session_start();
 if(!empty($_SESSION)) {
-require 'core/Events.php';
 
-$results = $app['database']->selectAll('events','Events');
 
-require 'views/dashboard/dashboardevenement.view.php';
+
+
+
+        require 'core/Events.php';
+    $results = $app['database']->selectEvents();
+
+
+        require 'views/dashboard/dashboardevenement.view.php';
+
+
 
 }
-else{
-    header('Location: /login');
-}
+    else {
+        header('Location: /login');
+    }

@@ -11,12 +11,37 @@ if(!empty($_SESSION)) {
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
 
+        $id = $_POST['id'];
         $date_event = convert($_POST['date_event']);
         $eventname = convert($_POST['eventname']);
-        $pictures = convert($_POST['pictures']);
         $description = convert($_POST['description']);
 
-        $results = $app['database']->updateEvent($_POST);
+        var_dump($_POST);
+        $date_event = convert($_POST['date_event']);
+        $eventname = convert($_POST['eventname']);
+        $description = convert($_POST['description']);
+
+        $picture = $_FILES['pictures'];
+        $filename = $_FILES['pictures']['name'];
+        $fileTmpname = $_FILES['pictures']['tmp_name'];
+        $fileError = $_FILES['pictures']['error'];
+        $filetype = $_FILES['pictures']['type'];
+
+        $fileExt = explode('.', $filename);
+        $fileActualExt = strtolower(end($fileExt));
+
+        $allowed = array('jpg', 'jpeg', 'png');
+
+        if (in_array($fileActualExt, $allowed)) {
+            $newFileName = uniqid('', true) . "." . $fileActualExt;
+            $fileDestination = 'uploads/' . $newFileName;
+            move_uploaded_file($fileTmpname, $fileDestination);
+
+        } else {
+            echo 'bestand wordt niet ondersteun. <br> wij ondersteunen .jpg, .jpeg en .png';
+        }
+
+        $results = $app['database']->updateEvent($date_event, $eventname, $fileDestination, $description, $id);
         header('location: /dashboard/evenement');
     }
     elseif($_SERVER["REQUEST_METHOD"] == "GET") {

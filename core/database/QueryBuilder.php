@@ -62,11 +62,11 @@ class QueryBuilder
         $query->execute();
     }
 
-    public function updateEvent($data)
+    public function updateEvent($date_event, $eventname, $pictures, $description, $id)
     {
         $statement = $this->pdo->prepare("UPDATE events
-        SET `date_event` = '{$data['date_event']}', `eventname` ='{$data['eventname']}', `pictures` = '{$data['pictures']}',`description` = '{$data['description']}'
-        WHERE `id` = '{$data['id']}'");
+        SET `date_event` = '{$date_event}', `eventname` ='{$eventname}', `pictures` = '{$pictures}',`description` = '{$description}'
+        WHERE `id` = '{$id}'");
 
         $statement->execute();
     }

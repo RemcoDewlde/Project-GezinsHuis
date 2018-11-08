@@ -4,9 +4,9 @@ $ongelezenberichten = $app['database']->unreadMessages($_SESSION['id']);
 <br>
 <div class="container-fluid">
 
-<div class="col-md-8 float-left">
-    <?php
-        if($_SESSION['function'] == 'Admin') {
+    <div class="col-md-8 float-left">
+        <?php
+        if ($_SESSION['function'] == 'Admin') {
             echo '
              <div class="row">
 <div class="col-md-3"></div>
@@ -54,26 +54,26 @@ $ongelezenberichten = $app['database']->unreadMessages($_SESSION['id']);
         </div>
         </div>
         <br>
-        ';}
+        ';
+        }
         echo '
         <div class="row">
             <div class="col-md-6"></div>
             <div class="col-md-5">
                 <div class="card text-center">';
 
-if(count($ongelezenberichten) == 0){
-    echo '<div class="col-auto" style="font-size: 24px;">
+        if (count($ongelezenberichten) == 0) {
+            echo '<div class="col-auto" style="font-size: 24px;">
                         <i class="fas fa-envelope-open fa-9x"></i>
-                    </div>';}
-    else {
-        echo '<div class="col-auto" style="font-size: 24px;">
-                        <i class="fas fa-envelope fa-9x"></i><span class="badge badge-primary badge-pill">'.count($ongelezenberichten).'</span>
                     </div>';
-    }
+        } else {
+            echo '<div class="col-auto" style="font-size: 24px;">
+                        <i class="fas fa-envelope fa-9x"></i><span class="badge badge-primary badge-pill">' . count($ongelezenberichten) . '</span>
+                    </div>';
+        }
 
 
-                    
-                    echo '<a href="/dashboard/berichten" class="btn btn-primary" role="button">Bekijk berichten</a>
+        echo '<a href="/dashboard/berichten" class="btn btn-primary" role="button">Bekijk berichten</a>
                 
             </div>
         </div>
@@ -88,70 +88,54 @@ if(count($ongelezenberichten) == 0){
             ';
 
 
-
-
-
-echo '</div>
+        echo '</div>
         <div class="col-md-4 float-right">
 <h4>Evenementen</h4>
             <hr>';
 
-    foreach ($results as $items) {
-        echo '
+        foreach ($results as $items) {
+            echo '
 <div class="card">
         <div class="row no-gutters">
             <div class="col-auto">
-                <img src="'. $items['pictures'] .'" width="150px" alt="">
+                <img src="' . $items['pictures'] . '" width="150px" alt="">
             </div>
             <div class="col">
                 <div class="card-block px-2">
                 
                     <h4 class="card-title">' . $items['eventname'] . '</h4>
-                    <p class="card-text"><small class="text-muted">' . $items['date_event'] . '</small></p>';
+                    <p class="card-text"><small class="text-muted">' . $items['date_event'] . '</small></p>
+                    </div>
+                    </div>
+                    ';
 
 
-        if (strlen($items['description']) >= 89){
-            echo '<div class="container">
+            if (strlen($items['description']) >= 89) {
+                echo '<div class="container">
   <div class="row ">
     <div class="col-md-12">
       <div id="summary">
-        <p class="collapse" id="collapseSummary'. $items['id'] .'">
-          '.substr($items['description'], 0).'
+        <p class="collapse" id="collapseSummary' . $items['id'] . '">
+          ' . substr($items['description'], 0) . '
         </p>
-        <a class="collapsed" data-toggle="collapse" href="#collapseSummary'. $items['id'] .'" aria-expanded="false" aria-controls="collapseSummary"></a>
-      </div></div></div>';
-        }
-        else {
-            echo($items['description']);
-        }
-        echo '
-                
-                
-  <br>
-                </div>
-                </div>
-            </div>
+        <a class="collapsed" data-toggle="collapse" href="#collapseSummary' . $items['id'] . '" aria-expanded="false" aria-controls="collapseSummary"></a>
+      </div>
+      </div>
+      </div>';
+            } else {
+                echo($items['description']);
+            }
+            echo '  
+            <br>
         </div>
-        
     </div>
     <br>
     ';
-    };
-    ?>
-
+        };
+        ?>
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
 
 
 </div>
@@ -172,7 +156,7 @@ echo '</div>
         min-height: 54px !important;
     }
 
-    #summary a.collapsed:after  {
+    #summary a.collapsed:after {
         content: 'Lees meer';
     }
 
@@ -180,7 +164,6 @@ echo '</div>
         content: 'Lees minder';
     }
 </style>
-
 
 
 <!--
@@ -203,7 +186,7 @@ if (strlen($items['description']) >= 89){
     <div class="card">
         <div class="row no-gutters">
             <div class="col-auto" style="font-size: 24px;">
-                <i class="fas fa-envelope fa-10x"></i><span class="badge badge-primary badge-pill"><?=count($ongelezenberichten)?></span>
+                <i class="fas fa-envelope fa-10x"></i><span class="badge badge-primary badge-pill"><?= count($ongelezenberichten) ?></span>
             </div>
             <div class="col">
                 <div class="card-block px-2">

@@ -2,7 +2,7 @@
     <?php
     foreach ($results as $items) {
         echo '
-<form method="post" action="event_bewerken">
+<form method="post" action="event_bewerken" enctype="multipart/form-data">
 
         <div class="form-group row">
             <label for="evenementTitel">Evenement titel</label>

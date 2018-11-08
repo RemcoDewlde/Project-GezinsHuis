@@ -10,13 +10,8 @@ session_start();
 if(!empty($_SESSION)) {
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $id = $_POST['id'];
-        $date_event = convert($_POST['date_event']);
-        $eventname = convert($_POST['eventname']);
-        $description = convert($_POST['description']);
-
         var_dump($_POST);
+        $id = $_POST['id'];
         $date_event = convert($_POST['date_event']);
         $eventname = convert($_POST['eventname']);
         $description = convert($_POST['description']);
